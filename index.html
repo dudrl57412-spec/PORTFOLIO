@@ -1,0 +1,1499 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JAEJOON Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Bebas+Neue&family=Noto+Sans+KR:wght@400;500;700;900&family=Oswald:wght@400;500;600;700&family=Rubik+Glitch&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      :root {
+        --white: #ffffff;
+        --black: #000000;
+        --red: #c81414;
+        --lime: #c9ff00;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background: #000;
+        color: var(--white);
+        font-family: "Noto Sans KR", sans-serif;
+        overflow-x: hidden;
+      }
+
+      /* ══ 히어로 sticky 래퍼 ══ */
+      .hero-sticky-wrap {
+        position: sticky;
+        top: 0;
+        z-index: 0;
+        height: 100vh;
+      }
+      /* 나머지 콘텐츠는 z-index 높여서 hero 위로 덮음 */
+      .content-wrap {
+        position: relative;
+        z-index: 10;
+        background: var(--black);
+      }
+
+      /*──────── NAV MARQUEE ────────*/
+      .nav-marquee {
+        width: 100%;
+      }
+      .nav-marquee .marquee-row {
+        border-bottom: 1px solid #222;
+      }
+      .nav-marquee .marquee-row:last-child {
+        border-bottom: none;
+      }
+      .nav-marquee .marquee-item {
+        font-size: 12px;
+        padding: 9px 0;
+      }
+
+      /*──────── HERO ────────*/
+      .hero {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        background: #0a0a0a;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
+      .hero-bg {
+        position: absolute;
+        inset: 0;
+        background: #0a0a0a;
+        filter: brightness(1.3) saturate(1.1);
+        z-index: 0;
+      }
+      .hero-bg::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(0, 0, 0, 0.4) 40%,
+          rgba(0, 0, 0, 0.1) 100%
+        );
+      }
+      nav {
+        position: relative;
+        z-index: 10;
+        padding: 0;
+      }
+      .hero-content {
+        position: relative;
+        z-index: 10;
+        flex: 1;
+        display: flex;
+        align-items: flex-end;
+        padding: 0 48px 60px;
+      }
+      .hero-text {
+        flex: 1;
+      }
+      .hero-eyebrow {
+        font-family: "Black Han Sans", sans-serif;
+        font-size: clamp(52px, 7vw, 96px);
+        line-height: 1;
+        color: var(--white);
+        margin-bottom: 4px;
+      }
+      .hero-sub1 {
+        font-family: "Rubik Glitch", sans-serif;
+        font-size: clamp(40px, 5.5vw, 78px);
+        line-height: 1;
+        color: var(--white);
+        letter-spacing: 0.04em;
+        text-decoration: line-through;
+        text-decoration-color: var(--red);
+        text-decoration-thickness: 3px;
+      }
+      .hero-sub2 {
+        font-family: "Rubik Glitch", sans-serif;
+        font-size: clamp(44px, 6vw, 84px);
+        line-height: 1;
+        color: var(--lime);
+        letter-spacing: 0.04em;
+        margin-bottom: 36px;
+      }
+      .hero-name {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: clamp(16px, 2vw, 22px);
+        letter-spacing: 0.15em;
+        color: var(--white);
+        opacity: 0.7;
+        margin-bottom: 2px;
+      }
+      .hero-portfolio {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: clamp(56px, 8vw, 112px);
+        line-height: 0.9;
+        color: var(--white);
+        letter-spacing: 0.02em;
+      }
+      .hero-divider {
+        width: 100%;
+        height: 1px;
+        background: rgba(255, 255, 255, 0.2);
+        margin: 28px 0 20px;
+      }
+      .hero-nav-bottom {
+        display: flex;
+        gap: 0;
+        list-style: none;
+        font-family: "Oswald", sans-serif;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+      }
+      .hero-nav-bottom li {
+        padding: 0 32px 0 0;
+        border-right: 1px solid rgba(255, 255, 255, 0.3);
+        margin-right: 32px;
+      }
+      .hero-nav-bottom li:last-child {
+        border-right: none;
+        margin-right: 0;
+      }
+      .hero-nav-bottom a {
+        color: var(--white);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .hero-nav-bottom a:hover {
+        color: var(--lime);
+      }
+      .hero-nav-bottom .hire-bottom {
+        color: var(--lime);
+      }
+      .hero-character {
+        position: relative;
+        flex: 0 0 auto;
+        display: flex;
+        align-items: flex-end;
+      }
+      .detected-box {
+        position: absolute;
+        top: 40px;
+        right: 0;
+        border: 2px solid var(--red);
+        padding: 4px 8px;
+        font-family: "Oswald", sans-serif;
+        font-size: 11px;
+        letter-spacing: 0.15em;
+        color: var(--white);
+      }
+      .detected-box::before,
+      .detected-box::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-color: var(--red);
+        border-style: solid;
+      }
+      .detected-box::before {
+        top: -2px;
+        left: -2px;
+        border-width: 2px 0 0 2px;
+      }
+      .detected-box::after {
+        bottom: -2px;
+        right: -2px;
+        border-width: 0 2px 2px 0;
+      }
+      .detected-label {
+        font-size: 9px;
+        letter-spacing: 0.2em;
+        opacity: 0.8;
+      }
+      .char-img {
+        width: 320px;
+        height: 480px;
+        background: linear-gradient(
+          180deg,
+          transparent 0%,
+          rgba(0, 200, 100, 0.05) 100%
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.2);
+        letter-spacing: 0.1em;
+      }
+
+      /*──────── MARQUEE ────────*/
+      .marquee-section {
+        overflow: hidden;
+        width: 100%;
+      }
+      .marquee-row {
+        overflow: hidden;
+      }
+      .marquee-track {
+        display: flex;
+        width: max-content;
+        will-change: transform;
+      }
+      .marquee-item {
+        display: inline-flex;
+        align-items: center;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .marquee-track {
+          animation: none !important;
+        }
+      }
+      .comp1 {
+        background: var(--black);
+      }
+      .comp1 .marquee-row {
+        border-bottom: 1px solid #1a1a1a;
+      }
+      .comp1 .marquee-row:last-child {
+        border-bottom: none;
+      }
+      .comp1 .marquee-item {
+        padding: 10px 0;
+        font-family: "Noto Sans KR", sans-serif;
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: 0.02em;
+        color: var(--white);
+      }
+      .comp1 .sep {
+        margin: 0 14px;
+        color: #777777;
+        font-size: 8px;
+      }
+      .comp2 {
+        background: var(--lime);
+        border-top: 2.5px solid var(--black);
+        border-bottom: 2.5px solid var(--black);
+      }
+      .comp2 .marquee-row {
+        border-bottom: 2.5px solid var(--black);
+      }
+      .comp2 .marquee-row:last-child {
+        border-bottom: none;
+      }
+      .comp2 .marquee-item {
+        padding: 9px 0;
+        font-family: "Oswald", sans-serif;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+      .comp2 .color-black {
+        color: var(--black);
+      }
+      .comp2 .color-red {
+        color: var(--red);
+      }
+      .comp2 .sep {
+        margin: 0 16px;
+        color: var(--black);
+        font-weight: 900;
+        font-size: 10px;
+      }
+
+      /*──────── ABOUT ME ────────*/
+      .about {
+        background: var(--black);
+        padding: 0;
+        display: block;
+        min-height: 600px;
+      }
+      .about-left {
+        display: grid;
+        grid-template-columns: 200px 1fr;
+        gap: 0 36px;
+        padding: 64px 48px;
+        align-items: start;
+      }
+      .about-char {
+        display: flex;
+        align-items: flex-end;
+        height: 100%;
+      }
+      .about-char-img {
+        width: 100%;
+        background: linear-gradient(180deg, #1a1a1a 0%, #0d0d0d 100%);
+        border-radius: 4px;
+        aspect-ratio: 3/4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 11px;
+        color: rgba(255, 255, 255, 0.15);
+        letter-spacing: 0.08em;
+      }
+      .about-quote {
+        font-size: 17px;
+        font-weight: 700;
+        line-height: 1.7;
+        color: var(--white);
+        margin-bottom: 28px;
+      }
+      .about-quote em {
+        color: var(--lime);
+        font-style: normal;
+      }
+      .about-cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        margin-bottom: 14px;
+      }
+      .card {
+        background: var(--white);
+        color: var(--black);
+        border-radius: 12px;
+        padding: 18px 20px;
+      }
+      .card-title {
+        font-family: "Oswald", sans-serif;
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--red);
+        letter-spacing: 0.08em;
+        margin-bottom: 10px;
+      }
+      .card-body {
+        font-size: 12px;
+        line-height: 1.7;
+        color: #333;
+      }
+      .card-body strong {
+        font-weight: 700;
+        color: var(--black);
+      }
+      .card-body .sub {
+        font-size: 11px;
+        color: #777;
+        margin-top: 2px;
+      }
+      .card-label {
+        font-size: 10px;
+        color: #888;
+        margin-bottom: 2px;
+        letter-spacing: 0.04em;
+      }
+      .card-value {
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--black);
+        margin-bottom: 8px;
+      }
+      .license-card {
+        background: var(--white);
+        color: var(--black);
+        border-radius: 12px;
+        padding: 16px 20px;
+        margin-bottom: 14px;
+      }
+      .license-title {
+        font-family: "Oswald", sans-serif;
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--red);
+        letter-spacing: 0.08em;
+        margin-bottom: 10px;
+      }
+      .license-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 6px;
+      }
+      .license-item {
+        font-size: 10px;
+        line-height: 1.5;
+        color: #333;
+        padding: 0 10px;
+        border-right: 1px solid #e0e0e0;
+      }
+      .license-item:last-child {
+        border-right: none;
+      }
+      .license-item strong {
+        font-size: 11px;
+        font-weight: 700;
+        color: var(--black);
+        display: block;
+      }
+      .license-item span {
+        color: #888;
+        font-size: 9px;
+      }
+      .skills-box {
+        background: var(--white);
+        color: var(--black);
+        border-radius: 12px;
+        padding: 18px 20px;
+      }
+      .skills-title {
+        font-family: "Oswald", sans-serif;
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--red);
+        margin-bottom: 12px;
+        letter-spacing: 0.06em;
+      }
+      .skill-group {
+        margin-bottom: 0;
+        padding: 0 12px;
+        border-right: 1px solid #e0e0e0;
+      }
+      .skill-group:last-child {
+        border-right: none;
+      }
+      .skill-group-label {
+        font-size: 9px;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        color: #888;
+        margin-bottom: 6px;
+        text-transform: uppercase;
+      }
+      .skill-icons {
+        display: flex;
+        gap: 6px;
+        flex-wrap: wrap;
+      }
+      .skill-icon {
+        width: 32px;
+        height: 32px;
+        border-radius: 7px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 10px;
+        font-weight: 800;
+        color: var(--white);
+        text-transform: uppercase;
+      }
+      .icon-ps {
+        background: #31a8ff;
+      }
+      .icon-ai {
+        background: #ff9a00;
+      }
+      .icon-figma {
+        background: #f24e1e;
+      }
+      .icon-vs {
+        background: #007acc;
+      }
+      .icon-cafe {
+        background: #0077ff;
+      }
+      .icon-notion {
+        background: #1a1a1a;
+        border: 1px solid #444;
+      }
+      .icon-office {
+        background: #d83b01;
+      }
+      .icon-xl {
+        background: #217346;
+      }
+      .icon-gpt {
+        background: #10a37f;
+      }
+      .icon-gemini {
+        background: linear-gradient(135deg, #4285f4, #9b72cb);
+      }
+      .icon-claude {
+        background: #d97706;
+      }
+      .icon-perp {
+        background: #20b2aa;
+      }
+      .about-right {
+        background: var(--black);
+        border-left: 1px solid #222;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 20px;
+        overflow: hidden;
+      }
+      .about-title-big {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: clamp(80px, 10vw, 140px);
+        letter-spacing: 0.06em;
+        color: var(--white);
+        line-height: 0.9;
+        user-select: none;
+        text-align: center;
+      }
+      .about-title-big span {
+        color: var(--lime);
+      }
+
+      /*──────── SECTION HEADING ────────*/
+      .section-heading {
+        text-align: center;
+        padding: 64px 48px 40px;
+        background: var(--black);
+      }
+      .section-heading h2 {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: clamp(40px, 6vw, 72px);
+        letter-spacing: 0.04em;
+        color: var(--white);
+        margin-bottom: 8px;
+      }
+      .section-heading p {
+        font-family: "Oswald", sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        color: rgba(255, 255, 255, 0.6);
+        text-transform: uppercase;
+      }
+
+      /*──────── PORTFOLIO ────────*/
+      .portfolio-section {
+        background: var(--black);
+        padding: 0 48px 72px;
+      }
+      .portfolio-category {
+        font-family: "Oswald", sans-serif;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--white);
+        text-align: center;
+        margin-bottom: 24px;
+        margin-top: 48px;
+        position: relative;
+      }
+      .portfolio-category::before,
+      .portfolio-category::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        width: calc(50% - 120px);
+        height: 1px;
+        background: rgba(255, 255, 255, 0.2);
+      }
+      .portfolio-category::before {
+        left: 0;
+      }
+      .portfolio-category::after {
+        right: 0;
+      }
+      .portfolio-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+      .portfolio-grid.col2 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .portfolio-card {
+        border-radius: 12px;
+        overflow: hidden;
+        background: #1a1a1a;
+        aspect-ratio: 4/3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        cursor: pointer;
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+      .portfolio-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+      }
+      .portfolio-card-inner {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.2);
+        letter-spacing: 0.08em;
+      }
+      .card-kroven {
+        background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+      }
+      .card-megawash {
+        background: linear-gradient(135deg, #1a4a7a, #0d2a4a);
+      }
+      .card-alaska {
+        background: linear-gradient(135deg, #1a3a6a, #0a1a3a);
+      }
+      .card-oneday {
+        background: linear-gradient(135deg, #2d1b4e, #1a0d2e);
+      }
+      .card-skin {
+        background: linear-gradient(135deg, #4a7a2a, #2a4a1a);
+      }
+      .card-miseki {
+        background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+      }
+      .card-notjust {
+        background: linear-gradient(135deg, #1a2a6a, #0a1a4a);
+      }
+      .card-bagel {
+        background: linear-gradient(135deg, #f5e6c8, #e8d4a8);
+      }
+      .card-dosirack {
+        background: linear-gradient(135deg, #1a3a5a, #0a2a4a);
+      }
+      .card-stx {
+        background: linear-gradient(135deg, #0a0a1a, #001a3a);
+      }
+      .card-paris {
+        background: linear-gradient(135deg, #3a2a1a, #2a1a0a);
+      }
+      .card-musinsa {
+        background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+      }
+      .card-puzzly {
+        background: linear-gradient(135deg, #2d1b6e, #1a0d4e);
+      }
+      .card-changwon {
+        background: linear-gradient(135deg, #1a1a1a, #f5f5f5);
+      }
+      .card-label-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+        padding: 24px 16px 14px;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        color: rgba(255, 255, 255, 0.9);
+        text-transform: uppercase;
+      }
+
+      /*──────── FOOTER ────────*/
+      footer {
+        background: var(--lime);
+        padding: 56px 48px;
+        text-align: center;
+      }
+      .footer-title {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: clamp(36px, 6vw, 64px);
+        letter-spacing: 0.06em;
+        color: var(--red);
+        margin-bottom: 32px;
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px 80px;
+        max-width: 680px;
+        margin: 0 auto;
+        text-align: left;
+      }
+      .footer-item {
+        font-family: "Oswald", sans-serif;
+        font-size: 15px;
+        font-weight: 500;
+        color: var(--black);
+        padding: 4px 0;
+      }
+      .footer-item strong {
+        font-weight: 700;
+      }
+      .footer-item a {
+        color: var(--black);
+        text-decoration: underline;
+      }
+
+      /*──────── REVEAL ────────*/
+      .reveal {
+        opacity: 0;
+        transition: opacity 0.6s ease;
+      }
+      .reveal.visible {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ① HERO — sticky 고정 -->
+    <div class="hero-sticky-wrap">
+      <div class="hero">
+        <div class="hero-bg"></div>
+        <nav>
+          <section class="marquee-section comp1 nav-marquee">
+            <div class="marquee-row">
+              <div class="marquee-track" id="nav-r1"></div>
+            </div>
+          </section>
+        </nav>
+        <div class="hero-content">
+          <div class="hero-text">
+            <div class="hero-eyebrow">기획하는</div>
+            <div class="hero-sub1">UIUX DESIGNER &amp;</div>
+            <div class="hero-sub2">WEB DESIGNER</div>
+            <div class="hero-name">JAEJOON</div>
+            <div class="hero-portfolio">PORTFOLIO</div>
+            <div class="hero-divider"></div>
+            <ul class="hero-nav-bottom">
+              <li><a href="#about">ABOUT ME</a></li>
+              <li><a href="#webdesign">PROJECT</a></li>
+              <li><a href="#contact">CONTACT</a></li>
+              <li>
+                <a href="mailto:dudrl57412@gmail.com" class="hire-bottom"
+                  >HIRE ME</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ② 나머지 — 검정 배경으로 hero 위를 완전히 덮으며 올라옴 -->
+    <div class="content-wrap">
+      <section class="marquee-section comp2">
+        <div class="marquee-row">
+          <div class="marquee-track" id="c2-r1"></div>
+        </div>
+      </section>
+
+      <section class="about reveal" id="about">
+        <div class="about-left">
+          <div class="about-char">
+            <div class="about-char-img">[ CHARACTER ]</div>
+          </div>
+          <div class="about-main">
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 28px;
+                margin-bottom: 28px;
+                width: 100%;
+              "
+            >
+              <div class="about-title-big">ABOUT<span>ME</span></div>
+              <p class="about-quote" style="margin-bottom: 0">
+                "회사와 함께 <em>성장하며,</em><br />
+                나만의 <em>브랜드를 꿈꾸는</em><br />
+                신입 디자이너 여재준 입니다."
+              </p>
+            </div>
+            <div class="about-cards">
+              <div class="card">
+                <div class="card-title">Education</div>
+                <div class="card-body">
+                  <strong>대구그린컴퓨터학원</strong>
+                  <div>UI/UX 디자인·웹퍼블리싱 과정</div>
+                  <div class="sub">(2026.02 ~ 현재)</div>
+                  <div
+                    style="
+                      margin-top: 10px;
+                      padding-top: 10px;
+                      border-top: 1px solid #e0e0e0;
+                    "
+                  >
+                    <strong>구미직업능력개발학원</strong>
+                    <div>편집디자인 (포토샵, 일러스트) 과정</div>
+                    <div class="sub">(2025.10 ~ 2025.11)</div>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-title">Profile</div>
+                <div class="card-body">
+                  <div class="card-label">여재준 / YEO JAE JOON</div>
+                  <div
+                    class="card-value"
+                    style="
+                      padding-bottom: 8px;
+                      border-bottom: 1px solid #e0e0e0;
+                    "
+                  >
+                    2000.02.23
+                  </div>
+                  <div class="card-label" style="margin-top: 8px">mobile</div>
+                  <div
+                    class="card-value"
+                    style="
+                      padding-bottom: 8px;
+                      border-bottom: 1px solid #e0e0e0;
+                    "
+                  >
+                    010-7583-6352
+                  </div>
+                  <div class="card-label" style="margin-top: 8px">e-mail</div>
+                  <div class="card-value">dudrl57412@gmail.com</div>
+                </div>
+              </div>
+            </div>
+            <div class="license-card">
+              <div class="license-title">License</div>
+              <div class="license-grid" style="divide-color: #e0e0e0">
+                <div class="license-item">
+                  <strong>GTQ 포토샵 1급</strong><span>(2025.12)</span>
+                </div>
+                <div class="license-item">
+                  <strong>컴퓨터활용능력 2급</strong><span>(2023.09)</span>
+                </div>
+                <div class="license-item">
+                  <strong>ITQ 한글엑셀</strong><span>(2023.09)</span>
+                </div>
+                <div class="license-item">
+                  <strong>1종대형운전면허</strong><span>(2022.11)</span>
+                </div>
+                <div class="license-item">
+                  <strong>초경량비행장치 조종사</strong><span>(2019.09)</span>
+                </div>
+              </div>
+            </div>
+            <div class="skills-box">
+              <div class="skills-title">Skills</div>
+              <div
+                style="
+                  display: grid;
+                  grid-template-columns: repeat(4, 1fr);
+                  gap: 0;
+                "
+              >
+                <div class="skill-group">
+                  <div class="skill-group-label">DESIGN</div>
+                  <div class="skill-icons">
+                    <div class="skill-icon icon-ps">Ps</div>
+                    <div class="skill-icon icon-ai">Ai</div>
+                    <div class="skill-icon icon-figma" style="font-size: 8px">
+                      Fig
+                    </div>
+                  </div>
+                </div>
+                <div class="skill-group">
+                  <div class="skill-group-label">CODING</div>
+                  <div class="skill-icons">
+                    <div class="skill-icon icon-vs" style="font-size: 8px">
+                      VS
+                    </div>
+                    <div class="skill-icon icon-cafe" style="font-size: 7px">
+                      C24
+                    </div>
+                  </div>
+                </div>
+                <div class="skill-group">
+                  <div class="skill-group-label">OFFICE</div>
+                  <div class="skill-icons">
+                    <div class="skill-icon icon-notion" style="font-size: 8px">
+                      N
+                    </div>
+                    <div class="skill-icon icon-office" style="font-size: 8px">
+                      W
+                    </div>
+                    <div class="skill-icon icon-xl" style="font-size: 8px">
+                      XL
+                    </div>
+                  </div>
+                </div>
+                <div class="skill-group">
+                  <div class="skill-group-label">AI TOOLS</div>
+                  <div class="skill-icons">
+                    <div class="skill-icon icon-gpt" style="font-size: 7px">
+                      GPT
+                    </div>
+                    <div class="skill-icon icon-gemini" style="font-size: 6px">
+                      GEM
+                    </div>
+                    <div class="skill-icon icon-claude" style="font-size: 6px">
+                      CLU
+                    </div>
+                    <div class="skill-icon icon-perp" style="font-size: 6px">
+                      PRP
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="marquee-section comp1">
+        <div class="marquee-row">
+          <div class="marquee-track" id="c1-r3"></div>
+        </div>
+      </section>
+
+      <div class="section-heading reveal" id="webdesign">
+        <h2>Web Design Portfolio</h2>
+      </div>
+      <div class="portfolio-section reveal">
+        <div class="portfolio-category">BRANDING &amp; E-COMMERCE CONTEXT</div>
+        <div class="portfolio-grid">
+          <div class="portfolio-card card-kroven">
+            <div
+              class="portfolio-card-inner"
+              style="flex-direction: column; gap: 8px"
+            >
+              <div
+                style="
+                  font-family: &quot;Bebas Neue&quot;, sans-serif;
+                  font-size: 28px;
+                  color: #fff;
+                  letter-spacing: 0.1em;
+                "
+              >
+                KROVEN
+              </div>
+              <div
+                style="
+                  font-size: 9px;
+                  color: rgba(255, 255, 255, 0.5);
+                  letter-spacing: 0.15em;
+                "
+              >
+                WALK HEAVY · BUILT FROM THE GROUND UP
+              </div>
+            </div>
+            <div class="card-label-overlay">Branding Design</div>
+          </div>
+          <div class="portfolio-card card-megawash">
+            <div
+              class="portfolio-card-inner"
+              style="flex-direction: column; gap: 4px"
+            >
+              <div
+                style="
+                  font-family: &quot;Bebas Neue&quot;, sans-serif;
+                  font-size: 22px;
+                  color: #fff;
+                  letter-spacing: 0.1em;
+                "
+              >
+                MEGA WASH
+              </div>
+              <div
+                style="
+                  font-size: 10px;
+                  color: rgba(255, 255, 255, 0.5);
+                  letter-spacing: 0.1em;
+                "
+              >
+                E-COMMERCE
+              </div>
+            </div>
+            <div class="card-label-overlay">Product Design</div>
+          </div>
+          <div class="portfolio-card card-alaska">
+            <div
+              class="portfolio-card-inner"
+              style="flex-direction: column; gap: 6px; text-align: center"
+            >
+              <div
+                style="
+                  font-size: 11px;
+                  color: rgba(255, 255, 255, 0.6);
+                  letter-spacing: 0.08em;
+                "
+              >
+                늘는 순간 여기가 알래스카!
+              </div>
+              <div
+                style="
+                  font-family: &quot;Black Han Sans&quot;, sans-serif;
+                  font-size: 18px;
+                  color: #fff;
+                "
+              >
+                슈퍼쿨링 알래스카 토퍼
+              </div>
+              <div
+                style="
+                  font-family: &quot;Bebas Neue&quot;, sans-serif;
+                  font-size: 40px;
+                  color: var(--lime);
+                "
+              >
+                49%
+              </div>
+            </div>
+            <div class="card-label-overlay">Promotion Design</div>
+          </div>
+        </div>
+        <div class="portfolio-category">
+          DIGITAL MARKETING &amp; PROMOTION DESIGN
+        </div>
+        <div class="portfolio-grid">
+          <div class="portfolio-card card-oneday">
+            <div
+              class="portfolio-card-inner"
+              style="
+                flex-direction: column;
+                gap: 6px;
+                text-align: center;
+                padding: 20px;
+              "
+            >
+              <div
+                style="
+                  font-size: 10px;
+                  color: rgba(255, 255, 255, 0.5);
+                  letter-spacing: 0.12em;
+                "
+              >
+                ONEDAY CREW
+              </div>
+              <div
+                style="
+                  font-family: &quot;Black Han Sans&quot;, sans-serif;
+                  font-size: 15px;
+                  color: #fff;
+                  line-height: 1.5;
+                "
+              >
+                혼자 놀기 만렙들의<br /><span style="color: #a78bfa"
+                  >프리미엄</span
+                >
+                원데이 모임
+              </div>
+            </div>
+            <div class="card-label-overlay">App UI Design</div>
+          </div>
+          <div class="portfolio-card card-skin">
+            <div
+              class="portfolio-card-inner"
+              style="flex-direction: column; gap: 4px; text-align: center"
+            >
+              <div
+                style="
+                  font-family: &quot;Oswald&quot;, sans-serif;
+                  font-size: 20px;
+                  font-weight: 700;
+                  color: #fff;
+                  letter-spacing: 0.1em;
+                "
+              >
+                OE SKIN TON
+              </div>
+              <div
+                style="
+                  font-size: 10px;
+                  color: rgba(255, 255, 255, 0.6);
+                  letter-spacing: 0.08em;
+                "
+              >
+                SUMMER DAILY CARE
+              </div>
+            </div>
+            <div class="card-label-overlay">Marketing Design</div>
+          </div>
+          <div class="portfolio-card card-miseki">
+            <div class="portfolio-card-inner">
+              <div
+                style="
+                  font-family: &quot;Oswald&quot;, sans-serif;
+                  font-size: 18px;
+                  font-weight: 300;
+                  color: #fff;
+                  letter-spacing: 0.2em;
+                "
+              >
+                Miseki seoul
+              </div>
+            </div>
+            <div class="card-label-overlay">Brand SNS</div>
+          </div>
+        </div>
+        <div class="portfolio-category">CREATIVE VISUAL ARTWORK</div>
+        <div
+          class="portfolio-grid col2"
+          style="max-width: 660px; margin: 0 auto"
+        >
+          <div class="portfolio-card card-notjust">
+            <div
+              class="portfolio-card-inner"
+              style="flex-direction: column; gap: 6px; text-align: center"
+            >
+              <div
+                style="
+                  font-family: &quot;Oswald&quot;, sans-serif;
+                  font-size: 11px;
+                  color: rgba(255, 255, 255, 0.5);
+                  letter-spacing: 0.15em;
+                "
+              >
+                HIP THE NORM
+              </div>
+              <div
+                style="
+                  font-family: &quot;Bebas Neue&quot;, sans-serif;
+                  font-size: 20px;
+                  color: #fff;
+                  letter-spacing: 0.08em;
+                "
+              >
+                NOT JUST STYLE
+              </div>
+              <div
+                style="
+                  font-family: &quot;Oswald&quot;, sans-serif;
+                  font-size: 9px;
+                  color: var(--lime);
+                  letter-spacing: 0.12em;
+                "
+              >
+                A STATEMENT
+              </div>
+            </div>
+            <div class="card-label-overlay">Creative Artwork</div>
+          </div>
+          <div class="portfolio-card card-bagel">
+            <div
+              class="portfolio-card-inner"
+              style="flex-direction: column; gap: 4px; text-align: center"
+            >
+              <div
+                style="
+                  font-family: &quot;Oswald&quot;, sans-serif;
+                  font-size: 11px;
+                  color: #8b6914;
+                  letter-spacing: 0.1em;
+                "
+              >
+                My Favorite Things
+              </div>
+              <div
+                style="
+                  font-family: &quot;Bebas Neue&quot;, sans-serif;
+                  font-size: 32px;
+                  color: #5c3d11;
+                  letter-spacing: 0.06em;
+                "
+              >
+                Plain Bagel
+              </div>
+            </div>
+            <div
+              class="card-label-overlay"
+              style="
+                color: #5c3d11;
+                background: linear-gradient(
+                  transparent,
+                  rgba(200, 160, 80, 0.6)
+                );
+              "
+            >
+              Editorial Design
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section class="marquee-section comp2">
+        <div class="marquee-row">
+          <div class="marquee-track" id="c2-r3"></div>
+        </div>
+      </section>
+
+      <div class="section-heading reveal" id="publishing">
+        <h2>Web Publishing Portfolio</h2>
+        <p>Creative Web Planning &amp; Publishing</p>
+      </div>
+      <div class="portfolio-section reveal">
+        <div class="portfolio-category">
+          CLONE CODING &amp; TECHNICAL ANALYSIS
+        </div>
+        <div class="portfolio-grid">
+          <div class="portfolio-card card-dosirack">
+            <div
+              class="portfolio-card-inner"
+              style="flex-direction: column; gap: 6px; text-align: center"
+            >
+              <div
+                style="
+                  font-family: &quot;Black Han Sans&quot;, sans-serif;
+                  font-size: 20px;
+                  color: #fff;
+                "
+              >
+                도시락유심
+              </div>
+              <div
+                style="
+                  font-size: 10px;
+                  color: rgba(255, 255, 255, 0.5);
+                  letter-spacing: 0.08em;
+                "
+              >
+                통신사 없이, 우리만의 방식으로
+              </div>
+            </div>
+            <div class="card-label-overlay">Clone Coding</div>
+          </div>
+          <div class="portfolio-card card-stx">
+            <div
+              class="portfolio-card-inner"
+              style="
+                flex-direction: column;
+                gap: 6px;
+                padding: 20px;
+                text-align: left;
+                align-items: flex-start;
+              "
+            >
+              <div
+                style="
+                  font-size: 10px;
+                  color: rgba(255, 255, 255, 0.4);
+                  letter-spacing: 0.12em;
+                "
+              >
+                BEST OF THE WORLD
+              </div>
+              <div
+                style="
+                  font-family: &quot;Oswald&quot;, sans-serif;
+                  font-size: 16px;
+                  font-weight: 700;
+                  color: #fff;
+                  line-height: 1.3;
+                "
+              >
+                STX Engineering<br />&amp; Construction
+              </div>
+            </div>
+            <div class="card-label-overlay">Technical Analysis</div>
+          </div>
+          <div class="portfolio-card card-paris">
+            <div
+              class="portfolio-card-inner"
+              style="flex-direction: column; gap: 4px; text-align: center"
+            >
+              <div
+                style="
+                  font-family: &quot;Oswald&quot;, sans-serif;
+                  font-size: 11px;
+                  color: rgba(255, 200, 150, 0.6);
+                  letter-spacing: 0.15em;
+                "
+              >
+                PARIS CROISSANT
+              </div>
+              <div
+                style="
+                  font-family: &quot;Bebas Neue&quot;, sans-serif;
+                  font-size: 20px;
+                  color: #fff;
+                  letter-spacing: 0.06em;
+                "
+              >
+                CASTELLA No.1 EGG
+              </div>
+            </div>
+            <div class="card-label-overlay">Clone Coding</div>
+          </div>
+        </div>
+        <div class="portfolio-category" style="margin-top: 32px"></div>
+        <div
+          class="portfolio-grid col2"
+          style="max-width: 660px; margin: 0 auto"
+        >
+          <div class="portfolio-card card-puzzly">
+            <div
+              class="portfolio-card-inner"
+              style="flex-direction: column; gap: 6px; text-align: center"
+            >
+              <div
+                style="
+                  font-family: &quot;Black Han Sans&quot;, sans-serif;
+                  font-size: 18px;
+                  color: #fff;
+                "
+              >
+                청년, 여기 다 한다
+              </div>
+              <div style="font-size: 10px; color: rgba(255, 255, 255, 0.5)">
+                플리지 — 청년 커뮤니티
+              </div>
+            </div>
+            <div class="card-label-overlay">Web Publishing</div>
+          </div>
+          <div class="portfolio-card card-changwon">
+            <div
+              class="portfolio-card-inner"
+              style="flex-direction: column; gap: 6px; text-align: center"
+            >
+              <div
+                style="
+                  font-family: &quot;Black Han Sans&quot;, sans-serif;
+                  font-size: 16px;
+                  color: #333;
+                "
+              >
+                창원에서 맛집
+              </div>
+              <div style="font-size: 10px; color: #888">
+                마산 맛집 지도 서비스
+              </div>
+            </div>
+            <div
+              class="card-label-overlay"
+              style="
+                color: #333;
+                background: linear-gradient(
+                  transparent,
+                  rgba(200, 200, 200, 0.7)
+                );
+              "
+            >
+              Web Design
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-category">MUSINSA CLONE</div>
+        <div
+          class="portfolio-grid col2"
+          style="max-width: 660px; margin: 0 auto"
+        >
+          <div class="portfolio-card card-musinsa" style="aspect-ratio: 16/9">
+            <div
+              class="portfolio-card-inner"
+              style="flex-direction: column; gap: 4px; text-align: center"
+            >
+              <div
+                style="
+                  font-family: &quot;Oswald&quot;, sans-serif;
+                  font-size: 22px;
+                  font-weight: 800;
+                  color: #fff;
+                  letter-spacing: 0.1em;
+                "
+              >
+                MUSINSA
+              </div>
+              <div
+                style="
+                  font-size: 10px;
+                  color: rgba(255, 255, 255, 0.4);
+                  letter-spacing: 0.08em;
+                "
+              >
+                무신사 클론 코딩
+              </div>
+            </div>
+            <div class="card-label-overlay">Clone Coding</div>
+          </div>
+        </div>
+      </div>
+
+      <footer id="contact">
+        <div class="footer-title reveal">LET'S CONNECT!</div>
+        <div class="footer-grid reveal">
+          <div class="footer-item">
+            <strong>Email :</strong> dudrl57412@gmail.com
+          </div>
+          <div class="footer-item"><strong>InstarID :</strong> @hs.yjj</div>
+          <div class="footer-item">
+            <strong>Call :</strong> +82 10-7583-6352
+          </div>
+          <div class="footer-item">
+            <strong>Notion :</strong> <a href="#">JaeJoon Portfolio</a>
+          </div>
+          <div class="footer-item"><strong>Location :</strong> Daegu, KR</div>
+          <div class="footer-item">
+            <strong>GitHub :</strong> <a href="#">github.com/dudrl57421-spec</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <!-- /.content-wrap -->
+
+    <script>
+      const C1_TEXTS = ["기획하는 디자이너 / 논리적인 퍼블리셔"];
+      const C2_TEXTS = [
+        "UIUX DESIGN",
+        "WEB DESIGN",
+        "FIGMA",
+        "PHOTOSHOP",
+        "ILLURSTRAOR",
+        "CAFE24",
+        "VISUALSTUDIO CODE",
+        "CHATGPT",
+        "GEMINI",
+      ];
+      function buildC1Item(t) {
+        const s = document.createElement("span");
+        s.className = "marquee-item";
+        s.innerHTML = `${t}<span class="sep">◆</span>`;
+        return s;
+      }
+      let _c2cnt = 0;
+      function buildC2Item(t, i) {
+        const s = document.createElement("span");
+        s.className = `marquee-item ${_c2cnt++ % 2 === 0 ? "color-black" : "color-red"}`;
+        s.innerHTML = `${t}<span class="sep">◆</span>`;
+        return s;
+      }
+      function fillTrack(el, texts, fn) {
+        texts.forEach((t, i) => el.appendChild(fn(t, i)));
+        const copies = Math.ceil((window.innerWidth * 4) / el.scrollWidth) + 3;
+        for (let c = 0; c < copies; c++)
+          texts.forEach((t, i) => el.appendChild(fn(t, i)));
+        return el.scrollWidth / 2;
+      }
+      function startMarquee(el, speed, reset) {
+        let p = 0;
+        (function tick() {
+          p += speed;
+          if (p >= reset) p -= reset;
+          el.style.transform = `translateX(${-p}px)`;
+          requestAnimationFrame(tick);
+        })();
+      }
+      window.addEventListener("DOMContentLoaded", () => {
+        [
+          ["nav-r1", 0.55, C1_TEXTS, buildC1Item],
+          ["c2-r1", 0.75, C2_TEXTS, buildC2Item],
+          ["c1-r3", 0.6, C1_TEXTS, buildC1Item],
+          ["c2-r3", 0.8, C2_TEXTS, buildC2Item],
+        ].forEach(([id, sp, texts, fn]) => {
+          const el = document.getElementById(id);
+          if (!el) return;
+          startMarquee(el, sp, fillTrack(el, texts, fn));
+        });
+      });
+      const io = new IntersectionObserver(
+        (e) =>
+          e.forEach((x) => {
+            if (x.isIntersecting) x.target.classList.add("visible");
+          }),
+        { threshold: 0.12 },
+      );
+      document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+    </script>
+  </body>
+</html>
