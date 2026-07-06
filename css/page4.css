@@ -3,25 +3,25 @@
 ========================================= */
 /* WEB PUBLISHING CARDS BACKGROUNDS */
 .card-puzzly {
-  background: linear-gradient(155deg, #040210, #120828);
+  background: url("../image/puzzly_main.png") center center / cover no-repeat;
 }
 .card-changwon {
   background: linear-gradient(155deg, #d8d8d8, #f0f0f0);
 }
 .card-changwon-dark {
-  background: linear-gradient(155deg, #1c1c1c, #2a2a2a);
+  background: url("../image/changwon_main.png") center center / cover no-repeat;
 }
 
 /* CLONE CODING CARDS BACKGROUNDS */
 .card-dosirack {
-  background: linear-gradient(155deg, #040e18, #0a1c2c);
+  background: url("../image/dosirack_main.png") center center / cover no-repeat;
 }
 .card-stx {
-  background: linear-gradient(155deg, #010108, #000a14);
+  background: url("../image/stx_main.png") center center / cover no-repeat;
 }
 .card-paris {
-  background: linear-gradient(155deg, #100803, #1c1006);
+  background: url("../image/paris_main.png") center center / cover no-repeat;
 }
 .card-musinsa {
-  background: linear-gradient(155deg, #020202, #080808);
+  background: url("../image/musinsa_main.png") center center / cover no-repeat;
 }

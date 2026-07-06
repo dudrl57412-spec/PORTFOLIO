@@ -240,6 +240,16 @@
 .pf-view-btn.btn-site:hover {
   background: rgba(255, 255, 255, 0.18);
 }
+.pf-view-btn.btn-site-accent {
+  border: 1px solid var(--lime);
+  background: var(--lime);
+  color: #06110a;
+  font-weight: 700;
+}
+.pf-view-btn.btn-site-accent:hover {
+  background: #b8e600;
+  border-color: #b8e600;
+}
 
 /* WEB DESIGN CARDS BACKGROUNDS & ANIMATIONS */
 .card-kroven {

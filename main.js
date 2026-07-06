@@ -5,6 +5,7 @@
 /*──────── PROJECT MODAL DATA ────────*/
 const PF_DATA = {
   kroven: {
+    cardTitle: "KROVEN",
     images: ["image/kroven_detail.png"],
     title: "'KROVEN' 워커 브랜드 디자인(로고, 상세페이지, 카페24) 패키지",
     name: "KROVEN 브랜드 디자인 패키지",
@@ -30,6 +31,7 @@ const PF_DATA = {
       "• 환경 친화적 가치 입증\n• 타깃 확장성 검증\n• 디지털 바이럴 최적화\n• 디자인 우수성",
   },
   megawash: {
+    cardTitle: "MEGA WASH",
     images: ["image/megawash_detail.png"],
     title:
       "대용량 생활화학 제품 브랜드 메가워시 세탁세제 상세페이지 분석 및 기획",
@@ -49,6 +51,7 @@ const PF_DATA = {
       "• 비즈니스 모델 맞춤형 상단 카피라이팅 구현 때때로 강하게 제거하는 고농축 대용량 세제의 소구점을 명확한 텍스트로 시각화하여 제품 신뢰도 확보\n• 소비자 안심 유도 디자인인 구조화 아토피 및 미세먼지 인증 엠블럼을 메인 제품 우측에 전면 배치하여 기능성 세제로서의 전문성 강화\n• 정보 전달 중심의 직관적 UI 최적화 대형 제품 이미지와 핵심 기능 요약을 한눈에 파악할 수 있는 스캔러블한 레이아웃을 완성하여 구매 전환율 제고",
   },
   alaska: {
+    cardTitle: "ALASKA TOPPER",
     images: [
       "image/alaska_card_1.jpg",
       "image/alaska_card_2.jpg",
@@ -71,6 +74,7 @@ const PF_DATA = {
       "• 셀링 포인트 시각화를 통한 가독성 강화 수치화된 프로모션 혜택(49% OFF, 1위 등)의 폰트 스케일을 극대화하여 모바일 환경에서의 가독성 제고\n• 브랜드 아이덴티티 맞춤형 그래픽 구현 제품의 핵심 기능인 강력한 클링감과 구취 제거력을 얼음 그래픽 및 조명 효과 래핑으로 명확히 표현\n• 상업적 목적의 레이아웃 최적화 상단 카피, 중앙 제품 뷰, 하단 엠블럼 및 CTA 버튼으로 이어지는 흐름을 설계하여 구매 전환 스크롤 최적화",
   },
   oneday: {
+    cardTitle: "ONEDAY CREW",
     images: ["image/oneday_detail.png"],
     title: "원데이크루 프리미엄 소셜 모임 랜딩페이지 디자인",
     name: "20대와 30대 직장인을 위한 취향 기반 원데이 그루 서비스 구축 프로젝트",
@@ -91,6 +95,7 @@ const PF_DATA = {
       "• 피그마 컴포넌트화 작업을 통한 개발 마크업 구조 고려 및 실무 협업 프로세스 최적화\n• 타겟 분석에 기반한 폰트 위계와 행간 자간 조절로 랜딩페이지 정보 전달 가독성 극대화\n• 기획부터 화면 설계 및 그래픽 소스 제작까지 전체 UI UX 과정을 1인 총괄로 완수",
   },
   skin: {
+    cardTitle: "BRAND BANNER",
     images: [
       "image/skin_1.png",
       "image/skin_2.png",
@@ -111,7 +116,6 @@ const PF_DATA = {
       ["PhotoShop", "#8b4444"],
       ["Illerstrator", "#6b4a8b"],
     ],
-    url: "비어 있음",
     banner: "linear-gradient(155deg,#081303,#16280e)",
     overview:
       "이커머스 라이프스타일 브랜드의 시즌 마케팅 목적에 맞춰 디지털 환경에 최적화된 프로모션 배너 디자인을 단독 기획 및 제작한 프로젝트",
@@ -121,6 +125,7 @@ const PF_DATA = {
       "• 상업용 마케팅 배너의 시각적 주목도 제고 비비드한 컬러 블록 효과와 트렌디한 쉐이프 요소를 결합하여 모바일 스크롤 환경에서 소비자의 시선을 사로잡는 배너 구성 완성\n• 텍스트 스케일 조절을 통한 메시지 전달력 강화 프로모션 타이틀, 할인율, 상시 혜택의 폰트 크기와 두께를 유기적으로 대비시켜 광고 정보의 전달력 및 가독성 극대화\n• 커머스 플랫폼 최적화 레이아웃 완성 제품의 소구점, 모델 뷰, 구매 유도 영역이 시각적으로 유기적으로 연결되는 스캔러블한 구성을 완성하여 비즈니스 효율성 확보",
   },
   miseki: {
+    cardTitle: "VISUAL ARCHIVE",
     images: [
       "image/miseki_1.png",
       "image/miseki_2.png",
@@ -150,6 +155,7 @@ const PF_DATA = {
     result: "",
   },
   notjust: {
+    cardTitle: "FASHION ARTWORK",
     images: ["image/notjust_card_1.png", "image/notjust_card_2.png"],
     layout: "featured-duo",
     title: "영 타깃 중심의 스트리트 패션 그래픽 아트워크 시리즈",
@@ -169,6 +175,7 @@ const PF_DATA = {
       "• 정교한 그래픽 프로세싱을 통한 아트워크 완성도 제고 인물과 이질적인 드로잉 소스가 자연스럽게 맞물리도록 마스킹 및 오버레이 효과를 적용하여 완성도 높은 하이엔드 그래픽 도출\n• 영 타깃 특화 브랜드 아이덴티티 시각화 정형화된 커머스 레이아웃의 틀을 깨고 합하고 자유분방한 스트리트 브랜드의 콘셉트를 감각적인 아트워크로 완벽히 재현S\n• 시각 자산의 다각적 레이어 구조 확립 배경, 인물 모델, 라인 일러스트, 메인 타이포가 유기적으로 겹치는 다단 레이어 구조 속에서 시각적 뭉개짐 없는 정밀한 수치 계산 마크업 기반 마련",
   },
   bagel: {
+    cardTitle: "POSTER DESIGN",
     images: [
       "image/poster_card_1.png",
       "image/poster_card_2.png",
@@ -190,27 +197,44 @@ const PF_DATA = {
   },
   puzzly: {
     title: "YOUTH HUB ALL<br/>Plizy — Youth Community",
-    name: "Web Publishing",
-    created: "",
-    type: [["Visual Studio Code", "#8b4444"]],
-    url: "#",
-    banner: "linear-gradient(155deg,#050a18,#0c1430)",
-    overview: "내용을 입력해 주세요.",
-    work: "내용을 입력해 주세요.",
-    team: "내용을 입력해 주세요.",
-    result: "내용을 입력해 주세요.",
+    name: "플랫폼 UI/UX 디자인 및 웹 퍼블리싱",
+    created: "2026/05/29 → 2026/06/12",
+    type: [
+      ["FIGMA", "#6b4a8b"],
+      ["PHOTOSHOP", "#8b4444"],
+      ["Illustrator", "#b5651d"],
+      ["Visual Studio Code", "#007acc"],
+      ["ChatGPT", "#10a37f"],
+      ["Gemini", "#3d7a5c"],
+    ],
+    siteUrl: "https://daitda-one.vercel.app/",
+    overview:
+      "청년들의 다양한 요구도 트렌드를 반영하여 개발 구조(HTML/CSS)에 최적화된 화면을 설계하고 구현한 종합 플랫폼 웹 퍼블리싱 프로젝트",
+    work: "• 플랫폼 웹 표준 및 이커머스 UI 구조 설계\n• 개발 구조(HTML/CSS)를 고려한 피그마 컴포넌트 시스템 구축\n• 생성형 AI 활용 및 협업 툴 기반의 기획·퍼블리싱 프로세스 리드\n• 마이퍼즐 클릭 , 사용자에 맞는 청년 제도를 퍼즐화하여 인상적으로 표현",
+    team: "팀원 참여 (UI/UX 및 퍼블리싱 담당)\n\n• 팀장과의 기획 방향성 조율 및 컴포넌트 구조 최적화를 통한 전체적 갈등 관리\n• 잦은 수정 요구 및 기획 변경 발생 시, 지체 없는 즉각적인 코드 수정 및 화면 보완 수정",
+    result:
+      "• 사용자 중심 인터페이스 검증\n• 컴포넌트 모듈화를 통한 개발 리드 타임 단축\n• 신속한 피드백 반영 및 디버깅 최적화\n• 상호 존중 커뮤니케이션을 통한 안정적 프로젝트 마감",
   },
   "changwon-dark": {
     title: "CHANGWON FOODMAP<br/>Masan Restaurant Map",
     name: "Web Publishing",
-    created: "",
-    type: [["Visual Studio Code", "#8b4444"]],
+    created: "2026/05/11 → 2026/05/22",
+    type: [
+      ["FIGMA", "#6b4a8b"],
+      ["PHOTOSHOP", "#8b4444"],
+      ["Illustrator", "#b5651d"],
+      ["Visual Studio Code", "#007acc"],
+      ["ChatGPT", "#10a37f"],
+      ["Gemini", "#3d7a5c"],
+    ],
     url: "#",
-    banner: "linear-gradient(155deg,#06140a,#0e2414)",
-    overview: "내용을 입력해 주세요.",
-    work: "내용을 입력해 주세요.",
-    team: "내용을 입력해 주세요.",
-    result: "내용을 입력해 주세요.",
+    siteUrl: "https://changwonfinish.vercel.app/",
+    overview:
+      "창원특례시의 역사, 관광지, 지역 축제 등 종합 콘텐츠를 사용자가 직관적으로 탐색할 수 있도록 스크롤 기반 인터페이스로 구현한 웹 퍼블리싱 프로젝트",
+    work: "• 창원의 연혁, 출신 유명인, 주요 관광지, 마산 맛집 정보 및 진해군항제 등 지역 축제 일정을 아우르는 사용자 중심의 정보 구조 설계 및 레이아웃 배치\n•  메인 상단에 '도전과 혁신으로 열어가는' 슬로건과 텍스트 그래픽 요소를 배치하고, 신뢰감을 주는 블루 톤앤매너와 시원한 카드 뉴스 형태의 이미지를 활용해 시각적 가독성 제고\n• 슬라이더 기능과 마산 맛집 탭 구조 등 웹 최적화 구동을 고려한 피그마 컴포넌트 설계 및 UI 구성 완성",
+    team: "본인 1명 (1인 총괄 프로젝트)",
+    result:
+      "• 사용자 중심의 카드 뉴스 형태 레이아웃 검증\n• 탭 구조 및 슬라이더 모듈 구현을 통한 콘텐츠 가독성 제고\n• 웹 표준 및 의미론적 마크업을 통한 사이트 구조 안정성 확보",
   },
   dosirack: {
     title: "DOSIRAK USIM<br/>No Carrier Needed",
@@ -222,7 +246,7 @@ const PF_DATA = {
       ["Gemini", "#3d7a5c"],
     ],
     url: "#",
-    banner: "linear-gradient(155deg,#040e18,#0a1c2c)",
+    siteUrl: "https://dosirakclone.vercel.app/",
     overview: "내용을 입력해 주세요.",
     work: "내용을 입력해 주세요.",
     team: "내용을 입력해 주세요.",
@@ -238,7 +262,7 @@ const PF_DATA = {
       ["Gemini", "#3d7a5c"],
     ],
     url: "https://stxclone.ve...",
-    banner: "linear-gradient(155deg,#010108,#000a14)",
+    siteUrl: "https://stxclone.vercel.app/",
     overview: "내용을 입력해 주세요.",
     work: "내용을 입력해 주세요.",
     team: "내용을 입력해 주세요.",
@@ -254,7 +278,7 @@ const PF_DATA = {
       ["Gemini", "#3d7a5c"],
     ],
     url: "#",
-    banner: "linear-gradient(155deg,#100803,#1c1006)",
+    siteUrl: "https://pariscroissantclone.vercel.app/",
     overview: "내용을 입력해 주세요.",
     work: "내용을 입력해 주세요.",
     team: "내용을 입력해 주세요.",
@@ -270,7 +294,7 @@ const PF_DATA = {
       ["Gemini", "#3d7a5c"],
     ],
     url: "#",
-    banner: "linear-gradient(155deg,#0c0c0c,#181818)",
+    siteUrl: "https://musinsa-pied.vercel.app/",
     overview: "내용을 입력해 주세요.",
     work: "내용을 입력해 주세요.",
     team: "내용을 입력해 주세요.",
@@ -291,7 +315,7 @@ window.openSiteUrl = function (id) {
 window.openInfoModal = function (id) {
   const d = PF_DATA[id];
   if (!d) return;
-  document.getElementById("pf-info-title").innerHTML = d.title;
+  document.getElementById("pf-info-title").innerHTML = d.cardTitle || d.title;
   document.getElementById("pf-meta-name").textContent = d.name;
   document.getElementById("pf-meta-created").textContent = d.created || "—";
   const typeEl = document.getElementById("pf-meta-type");
@@ -305,39 +329,37 @@ window.openInfoModal = function (id) {
       typeEl.appendChild(span);
     });
   }
+  const urlRow = document.getElementById("pf-meta-url-row");
   const urlEl = document.getElementById("pf-meta-url");
-  if (urlEl) {
-    if (d.url && d.url !== "#" && !d.url.startsWith("비어")) {
-      // 여러 URL이 " / " 로 구분된 경우 각각 링크로 렌더링
-      const urls = d.url
-        .split(" / ")
-        .map((u) => u.trim())
-        .filter(Boolean);
-      urlEl.innerHTML = urls
-        .map(
-          (u, i) =>
-            `<a href="${u}" target="_blank" rel="noopener noreferrer" style="display:block;margin-bottom:2px">${u.length > 50 ? u.substring(0, 50) + "..." : u}</a>`,
-        )
-        .join("");
-    } else {
-      urlEl.innerHTML = `<span style="color:#666">${d.url || "—"}</span>`;
-    }
+  const hasUrl = d.url && d.url !== "#" && !d.url.startsWith("비어");
+  if (urlRow) urlRow.style.display = hasUrl ? "" : "none";
+  if (urlEl && hasUrl) {
+    // 여러 URL이 " / " 로 구분된 경우 각각 링크로 렌더링
+    const urls = d.url
+      .split(" / ")
+      .map((u) => u.trim())
+      .filter(Boolean);
+    urlEl.innerHTML = urls
+      .map(
+        (u, i) =>
+          `<a href="${u}" target="_blank" rel="noopener noreferrer" style="display:block;margin-bottom:2px">${u.length > 50 ? u.substring(0, 50) + "..." : u}</a>`,
+      )
+      .join("");
   }
-  document.getElementById("pf-sec-overview").innerHTML = (
-    d.overview || ""
-  ).replace(/\n/g, "<br>");
-  document.getElementById("pf-sec-work").innerHTML = (d.work || "").replace(
-    /\n/g,
-    "<br>",
-  );
-  document.getElementById("pf-sec-team").innerHTML = (d.team || "").replace(
-    /\n/g,
-    "<br>",
-  );
-  document.getElementById("pf-sec-result").innerHTML = (d.result || "").replace(
-    /\n/g,
-    "<br>",
-  );
+
+  function fillSection(rowId, bodyId, text) {
+    const row = document.getElementById(rowId);
+    const body = document.getElementById(bodyId);
+    const hasContent = !!(text && text.trim());
+    if (row) row.style.display = hasContent ? "" : "none";
+    if (body) body.innerHTML = hasContent ? text.replace(/\n/g, "<br>") : "";
+  }
+
+  fillSection("pf-sec-overview-row", "pf-sec-overview", d.overview);
+  fillSection("pf-sec-work-row", "pf-sec-work", d.work);
+  fillSection("pf-sec-team-row", "pf-sec-team", d.team);
+  fillSection("pf-sec-result-row", "pf-sec-result", d.result);
+
   document.getElementById("pf-info-overlay").classList.add("open");
   document.body.style.overflow = "hidden";
 };
@@ -351,7 +373,6 @@ window.closeInfoModal = function () {
 window.openGalleryModal = function (id) {
   const d = PF_DATA[id];
   if (!d) return;
-  document.getElementById("pf-gallery-title-bar").textContent = d.name;
   const scroll = document.getElementById("pf-gallery-scroll");
   if (!scroll) return;
   const images =
@@ -380,7 +401,7 @@ window.openGalleryModal = function (id) {
     const wrap = document.createElement("div");
     wrap.onclick = (e) => e.stopPropagation();
     wrap.style.cssText =
-      "width:min(88%,900px);display:flex;flex-direction:column;gap:12px;";
+      "width:100%;display:flex;flex-direction:column;gap:12px;";
 
     const top = document.createElement("div");
     top.appendChild(makeImg(images[0], d.name, 0));
@@ -417,7 +438,7 @@ window.openGalleryModal = function (id) {
     const wrap = document.createElement("div");
     wrap.onclick = (e) => e.stopPropagation();
     wrap.style.cssText =
-      "width:min(88%,900px);display:flex;flex-direction:column;gap:12px;";
+      "width:100%;display:flex;flex-direction:column;gap:12px;";
 
     // 상단: 1번 크게
     const top = document.createElement("div");
@@ -450,7 +471,7 @@ window.openGalleryModal = function (id) {
     const wrap = document.createElement("div");
     wrap.onclick = (e) => e.stopPropagation();
     wrap.style.cssText =
-      "width:min(88%,900px);display:flex;flex-direction:column;gap:12px;";
+      "width:100%;display:flex;flex-direction:column;gap:12px;";
 
     function addSingle(i) {
       if (i >= images.length) return;
@@ -493,7 +514,7 @@ window.openGalleryModal = function (id) {
     const wrap = document.createElement("div");
     wrap.onclick = (e) => e.stopPropagation();
     wrap.style.cssText =
-      "width:min(88%,900px);display:flex;flex-direction:column;gap:12px;";
+      "width:100%;display:flex;flex-direction:column;gap:12px;";
 
     function addS(i) {
       if (i >= images.length) return;
@@ -646,12 +667,16 @@ window.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
 
   /*──────── PORTFOLIO CARD STAGGERED REVEAL ────────*/
-  document.querySelectorAll('[style*="display:grid"]').forEach((grid) => {
-    const cards = grid.querySelectorAll(".pf-card-reveal");
-    cards.forEach((card, i) => {
-      card.style.transitionDelay = `${(i % 4) * 90}ms`;
+  document
+    .querySelectorAll(
+      '[style*="display:grid"], .about-cards, .about-bottom-row, .ai-workflow-grid',
+    )
+    .forEach((grid) => {
+      const cards = grid.querySelectorAll(".pf-card-reveal");
+      cards.forEach((card, i) => {
+        card.style.transitionDelay = `${(i % 4) * 130}ms`;
+      });
     });
-  });
 
   const pfCardIO = new IntersectionObserver(
     (entries) =>
@@ -661,7 +686,7 @@ window.addEventListener("DOMContentLoaded", () => {
           pfCardIO.unobserve(entry.target);
         }
       }),
-    { threshold: 0.15, rootMargin: "0px 0px -40px 0px" },
+    { threshold: 0.1, rootMargin: "0px 0px -20px 0px" },
   );
   document
     .querySelectorAll(".pf-card-reveal")
