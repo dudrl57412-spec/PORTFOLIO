@@ -1,0 +1,399 @@
+/* =========================================
+   3. WEB DESIGN & 포트폴리오 공통 (페이지 3)
+========================================= */
+.section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 72px 48px 40px;
+  background: var(--black);
+  border-bottom: 1px solid #1e1e1e;
+}
+.section-heading h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(36px, 5vw, 60px);
+  letter-spacing: 0.04em;
+  color: var(--white);
+  margin-bottom: 0;
+  line-height: 1;
+}
+.section-heading p {
+  font-family: "Oswald", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  color: rgba(255, 255, 255, 0.35);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.portfolio-section {
+  background: var(--black);
+  padding: 0 48px 80px;
+}
+.portfolio-category {
+  font-family: "Oswald", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.3);
+  text-align: left;
+  margin-bottom: 2px;
+  margin-top: 52px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #1a1a1a;
+}
+
+/* PORTFOLIO CARD BASE */
+.portfolio-card {
+  overflow: hidden;
+  background: #0e0e0e;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  position: relative;
+  cursor: none;
+  border-radius: 14px;
+  will-change: border-radius;
+  transition: border-radius 0.9s cubic-bezier(0.65, 0, 0.35, 1);
+}
+.portfolio-card:hover {
+  border-radius: 999px;
+}
+.portfolio-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0);
+  transition: background 0.42s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+.portfolio-card:hover::after {
+  background: rgba(0, 0, 0, 0.55);
+}
+
+/* CUSTOM CIRCLE CURSOR */
+.pf-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(201, 255, 0, 0.9);
+  background: rgba(201, 255, 0, 0.12);
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(1);
+  transition:
+    opacity 0.3s ease,
+    width 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    height 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    background 0.35s ease;
+  will-change: transform;
+}
+.pf-cursor.show {
+  opacity: 1;
+}
+.pf-cursor.hovering {
+  width: 60px;
+  height: 60px;
+  background: rgba(201, 255, 0, 0.06);
+}
+
+/* INNER CONTENT & TAGS */
+.pf-inner {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 22px 24px;
+  z-index: 2;
+}
+.pf-tag {
+  font-family: "Oswald", sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  color: var(--lime);
+  border: 1px solid var(--lime);
+  padding: 2px 7px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  display: inline-block;
+  position: relative;
+  left: 0;
+  transition:
+    left 0.42s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.42s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.portfolio-card:hover .pf-tag {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.pf-inner-text {
+  min-height: 62px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  text-align: left;
+}
+.portfolio-card:hover .pf-inner-text {
+  min-height: 0;
+}
+.pf-title,
+.pf-sub {
+  position: relative;
+  left: 0;
+  transform: translateX(0);
+  transition:
+    left 0.42s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.42s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.portfolio-card:hover .pf-title,
+.portfolio-card:hover .pf-sub {
+  left: 50%;
+  transform: translateX(-50%);
+}
+.pf-title {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(20px, 2.5vw, 36px);
+  color: #fff;
+  letter-spacing: 0.04em;
+  line-height: 0.95;
+}
+.pf-sub {
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.45);
+  letter-spacing: 0.14em;
+  margin-top: 7px;
+  text-transform: uppercase;
+}
+
+/* HOVER BUTTONS */
+.pf-view-btns {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8) translateY(10px);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 0.42s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.42s cubic-bezier(0.34, 1.4, 0.64, 1);
+}
+.portfolio-card:hover .pf-view-btns {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1) translateY(0);
+  pointer-events: auto;
+}
+.pf-view-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 20px;
+  border-radius: 999px;
+  font-family: "Oswald", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+.pf-view-btn.btn-info {
+  border: 1px solid var(--white);
+  background: rgba(0, 0, 0, 0.4);
+  color: var(--white);
+}
+.pf-view-btn.btn-info:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+.pf-view-btn.btn-gallery {
+  border: 1px solid var(--lime);
+  background: rgba(0, 0, 0, 0.4);
+  color: var(--lime);
+}
+.pf-view-btn.btn-gallery:hover {
+  background: rgba(201, 255, 0, 0.12);
+}
+.pf-view-btn.btn-site {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+.pf-view-btn.btn-site:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+/* WEB DESIGN CARDS BACKGROUNDS & ANIMATIONS */
+.card-kroven {
+  background: url("../image/kroven_main.png") center center / cover no-repeat;
+}
+.card-oneday {
+  background: url("../image/oneday_main.png") center center / cover no-repeat;
+}
+.card-megawash {
+  background: url("../image/megawash_main.png") center center / cover no-repeat;
+}
+.card-alaska {
+  background: linear-gradient(155deg, #040a14, #081628);
+}
+.card-bagel {
+  background: linear-gradient(155deg, #d8c090, #e8d4a8);
+}
+
+.card-skin {
+  position: relative;
+  background: url("../image/skin_card_1.png") center center / cover no-repeat;
+}
+.card-skin .card-bg-2 {
+  position: absolute;
+  inset: 0;
+  background: url("../image/skin_card_2.png") center center / cover no-repeat;
+  opacity: 0;
+  animation: cardCycle2 12s ease-in-out infinite;
+}
+.card-skin .pf-inner,
+.card-skin .pf-view-btns {
+  z-index: 2;
+}
+
+.card-miseki {
+  position: relative;
+  background: none;
+}
+.card-miseki .card-bg-1,
+.card-miseki .card-bg-2,
+.card-miseki .card-bg-3 {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center center;
+  opacity: 0;
+}
+.card-miseki .card-bg-1 {
+  background-image: url("../image/miseki_card_1.png");
+  animation: miseki1 12s linear infinite;
+}
+.card-miseki .card-bg-2 {
+  background-image: url("../image/miseki_card_2.png");
+  animation: miseki2 12s linear infinite;
+}
+.card-miseki .card-bg-3 {
+  background-image: url("../image/miseki_card_3.png");
+  animation: miseki3 12s linear infinite;
+}
+.card-miseki .pf-inner,
+.card-miseki .pf-view-btns {
+  z-index: 2;
+}
+
+.card-notjust {
+  position: relative;
+  background: none;
+}
+.card-notjust .card-bg-1,
+.card-notjust .card-bg-2 {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center center;
+  opacity: 0;
+}
+.card-notjust .card-bg-1 {
+  background-image: url("../image/notjust_card_1.png");
+  animation: notjust1 12s linear infinite;
+}
+.card-notjust .card-bg-2 {
+  background-image: url("../image/notjust_card_2.png");
+  animation: notjust2 12s linear infinite;
+}
+.card-notjust .pf-inner,
+.card-notjust .pf-view-btns {
+  z-index: 2;
+}
+
+/* ANIMATION KEYFRAMES */
+@keyframes miseki1 {
+  0%,
+  30%,
+  100% {
+    opacity: 1;
+  }
+  38%,
+  92% {
+    opacity: 0;
+  }
+}
+@keyframes miseki2 {
+  0%,
+  30%,
+  71%,
+  100% {
+    opacity: 0;
+  }
+  38%,
+  63% {
+    opacity: 1;
+  }
+}
+@keyframes miseki3 {
+  0%,
+  63%,
+  100% {
+    opacity: 0;
+  }
+  71%,
+  92% {
+    opacity: 1;
+  }
+}
+@keyframes cardCycle2 {
+  0%,
+  50%,
+  100% {
+    opacity: 0;
+  }
+  5%,
+  45% {
+    opacity: 1;
+  }
+}
+@keyframes notjust1 {
+  0%,
+  42%,
+  100% {
+    opacity: 1;
+  }
+  50%,
+  92% {
+    opacity: 0;
+  }
+}
+@keyframes notjust2 {
+  0%,
+  42%,
+  100% {
+    opacity: 0;
+  }
+  50%,
+  92% {
+    opacity: 1;
+  }
+}

@@ -39,7 +39,7 @@
       rel="stylesheet"
     />
     <script src="main.js" defer></script>
-    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="css/main.css" />
   </head>
   <body>
     <!-- ① HERO — sticky 고정 -->
@@ -170,20 +170,22 @@
                 <div class="card-title">Career</div>
                 <div class="card-body">
                   <strong>주식회사 헤몬</strong>
-                  <div style="font-size: 11px; margin: 2px 0 4px">
+                  <div style="font-size: 20px; margin: 2px 0 4px">
                     광고마케팅 / 마케팅MD 2팀 팀장
                   </div>
                   <div class="sub">(2024.03 ~ 2025.09)</div>
                   <div
                     style="
+                      margin-bottom: 12px;
                       margin-top: 6px;
-                      font-size: 10px;
+                      font-size: 15px;
                       color: #777;
                       line-height: 1.6;
                     "
                   >
-                    스토어 및 매출 관리 · 광고 캠페인 및 프로모션 기획<br />
-                    데이터 분석 및 협업 · CS업무
+                    스토어 및 매출 관리 <br />
+                    광고 캠페인 및 프로모션 기획<br />
+                    데이터 분석 및 협업 <br />CS업무
                   </div>
                   <div
                     style="
@@ -193,14 +195,14 @@
                     "
                   >
                     <strong>한국법무보호복지공단 경북서부지소</strong>
-                    <div style="font-size: 11px; margin: 2px 0 4px">
+                    <div style="font-size: 20px; margin: 2px 0 4px">
                       인턴/수습
                     </div>
                     <div class="sub">(2023.10 ~ 2024.01)</div>
                     <div
                       style="
                         margin-top: 6px;
-                        font-size: 10px;
+                        font-size: 15px;
                         color: #777;
                         line-height: 1.6;
                       "
@@ -221,7 +223,7 @@
                   <div
                     style="
                       margin-top: 6px;
-                      font-size: 10px;
+                      font-size: 15px;
                       color: #777;
                       line-height: 1.7;
                     "
@@ -244,7 +246,7 @@
                     <div
                       style="
                         margin-top: 6px;
-                        font-size: 10px;
+                        font-size: 15px;
                         color: #777;
                         line-height: 1.7;
                       "
@@ -821,6 +823,9 @@
             data-project="miseki"
             style="aspect-ratio: 3/4"
           >
+            <div class="card-bg-1"></div>
+            <div class="card-bg-2"></div>
+            <div class="card-bg-3"></div>
             <div class="pf-inner">
               <span class="pf-tag">SNS</span>
               <div class="pf-inner-text">
@@ -885,6 +890,7 @@
             data-project="skin"
             style="aspect-ratio: 3/4"
           >
+            <div class="card-bg-2"></div>
             <div class="pf-inner">
               <span class="pf-tag">Marketing</span>
               <div class="pf-inner-text">
@@ -959,6 +965,8 @@
             data-project="notjust"
             style="aspect-ratio: 3/4"
           >
+            <div class="card-bg-1"></div>
+            <div class="card-bg-2"></div>
             <div class="pf-inner">
               <span class="pf-tag">Visual</span>
               <div class="pf-inner-text">
@@ -1058,7 +1066,7 @@
                   class="pf-view-btn btn-gallery"
                   onclick="
                     event.stopPropagation();
-                    openGalleryModal(
+                    window.openGalleryModal(
                       this.closest('.portfolio-card').dataset.project,
                     );
                   "

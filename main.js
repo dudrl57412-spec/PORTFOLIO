@@ -5,6 +5,7 @@
 /*──────── PROJECT MODAL DATA ────────*/
 const PF_DATA = {
   kroven: {
+    images: ["image/kroven_detail.png"],
     title: "'KROVEN' 워커 브랜드 디자인(로고, 상세페이지, 카페24) 패키지",
     name: "KROVEN 브랜드 디자인 패키지",
     created: "2026/05/01 → 2026/05/18",
@@ -15,6 +16,8 @@ const PF_DATA = {
       ["Cafe24", "#0066cc"],
       ["ChatGPT", "#10a37f"],
       ["Gemini", "#4285f4"],
+      ["PixverAI", "#552fff"],
+      ["KlingAI", "#025709"],
     ],
     url: "https://www.figma.com/proto/AnWclskYKTj2nHfltQ0p3p/%EB%A1%9C%EA%B3%A0%EB%94%94%EC%9E%90%EC%9D%B8-%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4?node-id=1-2&t=p3IQ0SZkB6fKGeqo-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1 / https://www.figma.com/proto/xux52OjeMH8nHok5pt4fxa/%EB%A1%9C%EA%B3%A0%EB%94%94%EC%9E%90%EC%9D%B8-%EC%83%81%EC%84%B8%ED%8E%98%EC%9D%B4%EC%A7%80?node-id=1-2&t=fRcv9BIl02D2DHb9-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=115%3A559",
     siteUrl: "https://dankan.cafe24.com/",
@@ -27,6 +30,7 @@ const PF_DATA = {
       "• 환경 친화적 가치 입증\n• 타깃 확장성 검증\n• 디지털 바이럴 최적화\n• 디자인 우수성",
   },
   megawash: {
+    images: ["image/megawash_detail.png"],
     title:
       "대용량 생활화학 제품 브랜드 메가워시 세탁세제 상세페이지 분석 및 기획",
     name: "대용량 생활화학 제품 브랜드 메가워시 세탁세제 상세페이지",
@@ -62,6 +66,7 @@ const PF_DATA = {
       "• 셀링 포인트 시각화를 통한 가독성 강화 수치화된 프로모션 혜택(49% OFF, 1위 등)의 폰트 스케일을 극대화하여 모바일 환경에서의 가독성 제고\n• 브랜드 아이덴티티 맞춤형 그래픽 구현 제품의 핵심 기능인 강력한 클링감과 구취 제거력을 얼음 그래픽 및 조명 효과 래핑으로 명확히 표현\n• 상업적 목적의 레이아웃 최적화 상단 카피, 중앙 제품 뷰, 하단 엠블럼 및 CTA 버튼으로 이어지는 흐름을 설계하여 구매 전환 스크롤 최적화",
   },
   oneday: {
+    images: ["image/oneday_detail.png"],
     title: "원데이크루 프리미엄 소셜 모임 랜딩페이지 디자인",
     name: "20대와 30대 직장인을 위한 취향 기반 원데이 그루 서비스 구축 프로젝트",
     created: "2026/06/01 → 2026/06/05",
@@ -81,6 +86,19 @@ const PF_DATA = {
       "• 피그마 컴포넌트화 작업을 통한 개발 마크업 구조 고려 및 실무 협업 프로세스 최적화\n• 타겟 분석에 기반한 폰트 위계와 행간 자간 조절로 랜딩페이지 정보 전달 가독성 극대화\n• 기획부터 화면 설계 및 그래픽 소스 제작까지 전체 UI UX 과정을 1인 총괄로 완수",
   },
   skin: {
+    images: [
+      "image/skin_1.png",
+      "image/skin_2.png",
+      "image/skin_3.png",
+      "image/skin_4.png",
+      "image/skin_5.png",
+      "image/skin_6.png",
+      "image/skin_7.png",
+      "image/skin_8.png",
+      "image/skin_9.png",
+      "image/skin_10.png",
+    ],
+    layout: "skin-gallery",
     title: "이커머스 라이프스타일 브랜드 프로모션 배너 디자인",
     name: "브랜드 프로모션 배너 디자인",
     created: "2026/04/27 → 2026/04/30",
@@ -98,6 +116,22 @@ const PF_DATA = {
       "• 상업용 마케팅 배너의 시각적 주목도 제고 비비드한 컬러 블록 효과와 트렌디한 쉐이프 요소를 결합하여 모바일 스크롤 환경에서 소비자의 시선을 사로잡는 배너 구성 완성\n• 텍스트 스케일 조절을 통한 메시지 전달력 강화 프로모션 타이틀, 할인율, 상시 혜택의 폰트 크기와 두께를 유기적으로 대비시켜 광고 정보의 전달력 및 가독성 극대화\n• 커머스 플랫폼 최적화 레이아웃 완성 제품의 소구점, 모델 뷰, 구매 유도 영역이 시각적으로 유기적으로 연결되는 스캔러블한 구성을 완성하여 비즈니스 효율성 확보",
   },
   miseki: {
+    images: [
+      "image/miseki_1.png",
+      "image/miseki_2.png",
+      "image/miseki_3.png",
+      "image/notjust_1.png",
+      "image/notjust_2.png",
+      "image/notjust_3.png",
+      "image/notjust_4.png",
+      "image/notjust_5.png",
+      "image/paradigm_1.png",
+      "image/paradigm_2.png",
+      "image/paradigm_3.png",
+      "image/paradigm_4.png",
+      "image/paradigm_5.png",
+    ],
+    layout: "multi-featured",
     title: "패션 브랜드 SNS 프로모션 및 비주얼 디자인 아카이브",
     name: "Fashion Brand SNS Promotion & Visual Design",
     created: "2026/05/01 → 2026/05/08",
@@ -111,6 +145,8 @@ const PF_DATA = {
     result: "",
   },
   notjust: {
+    images: ["image/notjust_card_1.png", "image/notjust_card_2.png"],
+    layout: "featured-duo",
     title: "영 타깃 중심의 스트리트 패션 그래픽 아트워크 시리즈",
     name: "영 타깃 중심의 스트리트 패션 그래픽 아트워크 시리즈",
     created: "2026/04/13 → 2026/04/15",
@@ -309,24 +345,185 @@ window.openGalleryModal = function (id) {
   if (!scroll) return;
   const images =
     d.images && d.images.length ? d.images : [null, null, null, null];
+  const layout = d.layout || "default"; // "default" | "featured-duo"
   scroll.innerHTML = "";
-  images.forEach((src, i) => {
-    const item = document.createElement("div");
-    item.className = "pf-gallery-item";
-    item.onclick = (e) => e.stopPropagation();
+
+  function makeImg(src, name, i) {
     if (src) {
       const img = document.createElement("img");
       img.src = src;
-      img.alt = `${d.name} - ${i + 1}`;
-      item.appendChild(img);
+      img.alt = `${name} - ${i + 1}`;
+      img.style.cssText =
+        "width:100%;display:block;border-radius:6px;user-select:none;pointer-events:none;";
+      return img;
     } else {
-      item.innerHTML = `<div class="pf-gallery-placeholder">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#444" stroke-width="1.5" width="44" height="44"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
-        <span>이미지 준비 중</span>
-      </div>`;
+      const ph = document.createElement("div");
+      ph.className = "pf-gallery-placeholder";
+      ph.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="#444" stroke-width="1.5" width="44" height="44"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>이미지 준비 중</span>`;
+      return ph;
     }
-    scroll.appendChild(item);
-  });
+  }
+
+  if (layout === "featured-duo" && images.length >= 3) {
+    // 1번 크게 위, 2번+3번 나란히 아래
+    const wrap = document.createElement("div");
+    wrap.onclick = (e) => e.stopPropagation();
+    wrap.style.cssText =
+      "width:min(88%,900px);display:flex;flex-direction:column;gap:12px;";
+
+    const top = document.createElement("div");
+    top.appendChild(makeImg(images[0], d.name, 0));
+    wrap.appendChild(top);
+
+    const bottom = document.createElement("div");
+    bottom.style.cssText =
+      "display:grid;grid-template-columns:1fr 1fr;gap:12px;";
+    bottom.appendChild(makeImg(images[1], d.name, 1));
+    bottom.appendChild(makeImg(images[2], d.name, 2));
+    wrap.appendChild(bottom);
+
+    // 나머지 이미지 2개씩 나란히 배치
+    let ri = 3;
+    while (ri < images.length) {
+      if (ri + 1 < images.length) {
+        const row = document.createElement("div");
+        row.style.cssText =
+          "display:grid;grid-template-columns:1fr 1fr;gap:12px;";
+        row.appendChild(makeImg(images[ri], d.name, ri));
+        row.appendChild(makeImg(images[ri + 1], d.name, ri + 1));
+        wrap.appendChild(row);
+        ri += 2;
+      } else {
+        const single = document.createElement("div");
+        single.appendChild(makeImg(images[ri], d.name, ri));
+        wrap.appendChild(single);
+        ri++;
+      }
+    }
+    scroll.appendChild(wrap);
+  } else if (layout === "featured-quad" && images.length >= 5) {
+    // 1번 크게 + 2,3 나란히 + 4,5 나란히
+    const wrap = document.createElement("div");
+    wrap.onclick = (e) => e.stopPropagation();
+    wrap.style.cssText =
+      "width:min(88%,900px);display:flex;flex-direction:column;gap:12px;";
+
+    // 상단: 1번 크게
+    const top = document.createElement("div");
+    top.appendChild(makeImg(images[0], d.name, 0));
+    wrap.appendChild(top);
+
+    // 중단: 2번 + 3번
+    const mid = document.createElement("div");
+    mid.style.cssText = "display:grid;grid-template-columns:1fr 1fr;gap:12px;";
+    mid.appendChild(makeImg(images[1], d.name, 1));
+    mid.appendChild(makeImg(images[2], d.name, 2));
+    wrap.appendChild(mid);
+
+    // 하단: 4번 + 5번
+    const bot = document.createElement("div");
+    bot.style.cssText = "display:grid;grid-template-columns:1fr 1fr;gap:12px;";
+    bot.appendChild(makeImg(images[3], d.name, 3));
+    bot.appendChild(makeImg(images[4], d.name, 4));
+    wrap.appendChild(bot);
+
+    // 추가 이미지
+    for (let i = 5; i < images.length; i++) {
+      const extra = document.createElement("div");
+      extra.appendChild(makeImg(images[i], d.name, i));
+      wrap.appendChild(extra);
+    }
+    scroll.appendChild(wrap);
+  } else if (layout === "multi-featured") {
+    // 구조: 0크게 / 1+2나란히 / 3크게 / 4+5나란히 / 6+7나란히
+    const wrap = document.createElement("div");
+    wrap.onclick = (e) => e.stopPropagation();
+    wrap.style.cssText =
+      "width:min(88%,900px);display:flex;flex-direction:column;gap:12px;";
+
+    function addSingle(i) {
+      if (i >= images.length) return;
+      const el = document.createElement("div");
+      el.appendChild(makeImg(images[i], d.name, i));
+      wrap.appendChild(el);
+    }
+    function addPair(i) {
+      if (i >= images.length) return;
+      const row = document.createElement("div");
+      row.style.cssText =
+        "display:grid;grid-template-columns:1fr 1fr;gap:12px;";
+      row.appendChild(makeImg(images[i], d.name, i));
+      if (i + 1 < images.length)
+        row.appendChild(makeImg(images[i + 1], d.name, i + 1));
+      wrap.appendChild(row);
+    }
+
+    // 고정 레이아웃:
+    // [0]크게 / [1,2]나란히 / [3]크게 / [4,5]나란히 / [6,7]나란히 / [8]크게 / [9,10]나란히 / [11,12]나란히
+    const layout_plan = [
+      { type: "single", idx: 0 },
+      { type: "pair", idx: 1 },
+      { type: "single", idx: 3 },
+      { type: "pair", idx: 4 },
+      { type: "pair", idx: 6 },
+      { type: "single", idx: 8 },
+      { type: "pair", idx: 9 },
+      { type: "pair", idx: 11 },
+    ];
+    layout_plan.forEach(({ type, idx }) => {
+      if (idx >= images.length) return;
+      if (type === "single") addSingle(idx);
+      else addPair(idx);
+    });
+
+    scroll.appendChild(wrap);
+  } else if (layout === "skin-gallery") {
+    // 1장크게 / 2장나란히 / 2장나란히 반복
+    const wrap = document.createElement("div");
+    wrap.onclick = (e) => e.stopPropagation();
+    wrap.style.cssText =
+      "width:min(88%,900px);display:flex;flex-direction:column;gap:12px;";
+
+    function addS(i) {
+      if (i >= images.length) return;
+      const el = document.createElement("div");
+      el.appendChild(makeImg(images[i], d.name, i));
+      wrap.appendChild(el);
+    }
+    function addP(i) {
+      if (i >= images.length) return;
+      const row = document.createElement("div");
+      row.style.cssText =
+        "display:grid;grid-template-columns:1fr 1fr;gap:12px;";
+      row.appendChild(makeImg(images[i], d.name, i));
+      if (i + 1 < images.length)
+        row.appendChild(makeImg(images[i + 1], d.name, i + 1));
+      wrap.appendChild(row);
+    }
+
+    // 섹션1: 0크게 / 1,2나란히 / 3,4나란히
+    addS(0);
+    addP(1);
+    addP(3);
+    // 섹션2: 5크게 / 6,7나란히 / 8,9나란히
+    if (images.length > 5) {
+      addS(5);
+      addP(6);
+      addP(8);
+    }
+
+    scroll.appendChild(wrap);
+  } else {
+    // 기본: 세로 나열
+    images.forEach((src, i) => {
+      const item = document.createElement("div");
+      item.className = "pf-gallery-item";
+      item.onclick = (e) => e.stopPropagation();
+      item.appendChild(makeImg(src, d.name, i));
+      scroll.appendChild(item);
+    });
+  }
+
   document.getElementById("pf-gallery-count-label").textContent =
     `${images.length} IMAGES`;
   scroll.scrollTop = 0;
