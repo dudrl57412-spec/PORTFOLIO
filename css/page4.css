@@ -2,26 +2,38 @@
    4. WEB PUBLISHING (페이지 4)
 ========================================= */
 /* WEB PUBLISHING CARDS BACKGROUNDS */
-.card-puzzly {
+.card-puzzly .pf-shape {
   background: url("../image/puzzly_main.png") center center / cover no-repeat;
 }
-.card-changwon {
+.card-changwon .pf-shape {
   background: linear-gradient(155deg, #d8d8d8, #f0f0f0);
 }
-.card-changwon-dark {
+.card-changwon-dark .pf-shape {
   background: url("../image/changwon_main.png") center center / cover no-repeat;
 }
 
 /* CLONE CODING CARDS BACKGROUNDS */
-.card-dosirack {
+.card-dosirack .pf-shape {
   background: url("../image/dosirack_main.png") center center / cover no-repeat;
 }
-.card-stx {
+.card-stx .pf-shape {
   background: url("../image/stx_main.png") center center / cover no-repeat;
 }
-.card-paris {
+.card-paris .pf-shape {
   background: url("../image/paris_main.png") center center / cover no-repeat;
 }
-.card-musinsa {
+.card-musinsa .pf-shape {
   background: url("../image/musinsa_main.png") center center / cover no-repeat;
+}
+
+/* 페이지 4 카드들은 16:8(가로형) 비율이라 페이지 3(3:4 세로형)과
+   스타디움 모양이 되는 지점이 달라서 따로 계산해서 덮어씀 */
+.card-puzzly:hover .pf-shape,
+.card-changwon:hover .pf-shape,
+.card-changwon-dark:hover .pf-shape,
+.card-dosirack:hover .pf-shape,
+.card-stx:hover .pf-shape,
+.card-paris:hover .pf-shape,
+.card-musinsa:hover .pf-shape {
+  clip-path: inset(0 round 25% / 50%);
 }

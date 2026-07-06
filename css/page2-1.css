@@ -1,0 +1,268 @@
+/* =========================================
+   2-1. AI UTILIZATION (페이지 2-1)
+   ※ .section-heading 스타일은 page3.css에 정의된 공통 스타일을 재사용합니다.
+   레이아웃 컨셉: 기울어진 카드 스택 뒤 + 중앙의 반투명 유리 패널
+========================================= */
+.ai-workflow-section {
+  position: relative;
+  background: var(--black);
+  padding: 64px 48px 100px;
+}
+.ai-workflow-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(201, 255, 0, 0.08),
+      transparent 42%
+    ),
+    radial-gradient(
+      circle at 85% 75%,
+      rgba(90, 150, 255, 0.07),
+      transparent 42%
+    );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* 3칸 고정 그리드 — 오와 열을 딱 맞춰서 정렬 */
+.ai-workflow-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  align-items: start;
+}
+
+/* 카드 전체 — 기울어진 스택 레이어 + 중앙 유리 패널을 담는 무대 */
+.ai-card-flip {
+  position: relative;
+  width: 100%;
+  min-height: 460px;
+  box-sizing: border-box;
+  cursor: default;
+}
+
+/* 뒤에 살짝 기울어져 깔리는 스택 레이어 (영상 속 겹쳐진 화면들) */
+.ai-stack-layer {
+  position: absolute;
+  inset: 14% 10%;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(155deg, #161616, #0b0b0b);
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.ai-stack-layer.layer-1 {
+  transform: rotate(-7deg) translateY(4px);
+}
+.ai-stack-layer.layer-2 {
+  transform: rotate(6deg) translateY(8px);
+}
+.ai-card-flip:hover .ai-stack-layer.layer-1 {
+  transform: rotate(-13deg) translate(-12px, -4px);
+}
+.ai-card-flip:hover .ai-stack-layer.layer-2 {
+  transform: rotate(11deg) translate(12px, 2px);
+}
+
+/* 카드별 스택 색상 포인트 */
+.accent-video .ai-stack-layer.layer-1 {
+  background: linear-gradient(
+    155deg,
+    rgba(201, 255, 0, 0.16),
+    rgba(201, 255, 0, 0.03)
+  );
+}
+.accent-video .ai-stack-layer.layer-2 {
+  background: linear-gradient(
+    155deg,
+    rgba(201, 255, 0, 0.08),
+    rgba(0, 0, 0, 0.1)
+  );
+}
+.accent-dev .ai-stack-layer.layer-1 {
+  background: linear-gradient(
+    155deg,
+    rgba(90, 150, 255, 0.18),
+    rgba(90, 150, 255, 0.03)
+  );
+}
+.accent-dev .ai-stack-layer.layer-2 {
+  background: linear-gradient(
+    155deg,
+    rgba(90, 150, 255, 0.09),
+    rgba(0, 0, 0, 0.1)
+  );
+}
+.accent-research .ai-stack-layer.layer-1 {
+  background: linear-gradient(
+    155deg,
+    rgba(255, 140, 60, 0.18),
+    rgba(255, 140, 60, 0.03)
+  );
+}
+.accent-research .ai-stack-layer.layer-2 {
+  background: linear-gradient(
+    155deg,
+    rgba(255, 140, 60, 0.09),
+    rgba(0, 0, 0, 0.1)
+  );
+}
+
+/* 정중앙에 뜨는 반투명 유리 패널 — 실제 텍스트 콘텐츠 */
+.ai-glass-panel {
+  position: absolute;
+  inset: 6% 4%;
+  z-index: 2;
+  border-radius: 16px;
+  background: #121212;
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  border: 1px solid #222;
+  padding: 26px 22px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition:
+    transform 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    background 0.45s ease,
+    border-color 0.45s ease,
+    backdrop-filter 0.45s ease;
+}
+/* 유리 표면 위로 스윽 지나가는 빛(영상같은 움직임) */
+.ai-glass-panel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 45%;
+  height: 100%;
+  background: linear-gradient(
+    115deg,
+    transparent,
+    rgba(255, 255, 255, 0.18),
+    transparent
+  );
+  transform: skewX(-18deg);
+  transition: left 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+.ai-card-flip:hover .ai-glass-panel::before {
+  left: 130%;
+}
+.ai-card-flip:hover .ai-glass-panel {
+  transform: scale(1.05) translateY(-6px);
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(201, 255, 0, 0.45);
+  backdrop-filter: blur(26px);
+  -webkit-backdrop-filter: blur(26px);
+}
+.accent-dev.ai-card-flip:hover .ai-glass-panel {
+  border-color: rgba(90, 150, 255, 0.5);
+}
+.accent-research.ai-card-flip:hover .ai-glass-panel {
+  border-color: rgba(255, 140, 60, 0.5);
+}
+
+.ai-glass-panel > * {
+  position: relative;
+}
+
+/* 카드 상단 (타이틀 + 세부 그룹명) */
+.ai-card-flip .card-title {
+  margin-bottom: 8px;
+}
+.ai-card-flip .card-body {
+  width: 100%;
+}
+
+/* 카드 안의 툴 이름 강조 (라임 컬러) */
+.ai-card-tools {
+  color: var(--lime);
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+}
+
+/* 불릿 리스트 — 기본엔 숨겨져 있다가 호버 시 살짝 아래에서 올라오며 나타남 */
+.ai-bullet-list {
+  list-style: none;
+  margin: 14px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(8px);
+  transition:
+    max-height 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.4s ease 0.05s,
+    transform 0.4s ease 0.05s;
+}
+.ai-card-flip:hover .ai-bullet-list {
+  max-height: 340px;
+  opacity: 1;
+  transform: translateY(0);
+}
+.ai-bullet-list li {
+  position: relative;
+  padding-left: 14px;
+  font-size: 12px;
+  color: #bbb;
+  line-height: 1.6;
+  text-align: left;
+}
+.ai-bullet-list li strong {
+  color: var(--lime);
+  font-weight: 700;
+}
+.ai-bullet-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--lime);
+}
+
+/* AI UTILIZATION RESPONSIVE */
+@media (max-width: 1200px) {
+  .ai-workflow-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 640px) {
+  .ai-workflow-grid {
+    grid-template-columns: 1fr;
+  }
+  .ai-card-flip {
+    min-height: 0;
+  }
+  /* 모바일에서는 호버가 없으므로 스택 연출 없이 항상 펼쳐진 카드로 표시 */
+  .ai-stack-layer {
+    display: none;
+  }
+  .ai-glass-panel {
+    position: static;
+    inset: auto;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: #111;
+    border: 1px solid #222;
+    align-items: flex-start;
+    text-align: left;
+  }
+  .ai-glass-panel::before {
+    display: none;
+  }
+  .ai-bullet-list {
+    max-height: none;
+    opacity: 1;
+    transform: none;
+  }
+}

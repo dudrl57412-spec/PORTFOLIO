@@ -47,21 +47,34 @@
 
 /* PORTFOLIO CARD BASE */
 .portfolio-card {
+  position: relative;
+  cursor: none;
+}
+/* 실제 시각적 모양(호버 시 알약 모양으로 변형)은 이 안쪽 래퍼가 담당.
+   바깥 .portfolio-card는 항상 완전한 사각형을 유지해서 호버 판정이
+   모서리에서 깜빡이지 않도록 함 (clip-path는 판정 영역이 아니라
+   보이는 모양만 바꾸는데, 같은 요소에 걸어두면 모서리 부근에서
+   마우스가 들어왔다 나갔다 하며 깜빡이는 문제가 생김) */
+.pf-shape {
+  position: absolute;
+  inset: 0;
   overflow: hidden;
   background: #0e0e0e;
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
-  position: relative;
-  cursor: none;
   border-radius: 14px;
-  will-change: border-radius;
-  transition: border-radius 0.9s cubic-bezier(0.65, 0, 0.35, 1);
+  clip-path: inset(0 round 14px);
+  will-change: clip-path, transform;
+  transition:
+    clip-path 1.3s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 1.3s cubic-bezier(0.22, 1, 0.36, 1);
 }
-.portfolio-card:hover {
-  border-radius: 999px;
+.portfolio-card:hover .pf-shape {
+  clip-path: inset(0 round 50% / 37.5%);
+  transform: scale(1.012);
 }
-.portfolio-card::after {
+.pf-shape::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -70,7 +83,7 @@
   z-index: 1;
   pointer-events: none;
 }
-.portfolio-card:hover::after {
+.portfolio-card:hover .pf-shape::after {
   background: rgba(0, 0, 0, 0.55);
 }
 
@@ -240,29 +253,63 @@
 .pf-view-btn.btn-site:hover {
   background: rgba(255, 255, 255, 0.18);
 }
-.pf-view-btn.btn-site-accent {
-  border: 1px solid var(--lime);
-  background: var(--lime);
-  color: #06110a;
-  font-weight: 700;
-}
-.pf-view-btn.btn-site-accent:hover {
-  background: #b8e600;
-  border-color: #b8e600;
-}
 
 /* WEB DESIGN CARDS BACKGROUNDS & ANIMATIONS */
-.card-kroven {
-  background: url("../image/kroven_main.png") center center / cover no-repeat;
+.card-kroven .pf-shape {
+  background: linear-gradient(155deg, #141414, #0a0a0a);
 }
-.card-oneday {
+.card-kroven .card-bg-1,
+.card-kroven .card-bg-2,
+.card-kroven .card-bg-3,
+.card-kroven .card-bg-4,
+.card-kroven .card-bg-5,
+.card-kroven .card-bg-6,
+.card-kroven .card-bg-7 {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center center;
+  opacity: 0;
+}
+.card-kroven .card-bg-1 {
+  background-image: url("../image/kroven_card_1.png");
+  animation: kroven1 24s ease-in-out infinite;
+}
+.card-kroven .card-bg-2 {
+  background-image: url("../image/kroven_card_2.png");
+  animation: kroven2 24s ease-in-out infinite;
+}
+.card-kroven .card-bg-3 {
+  background-image: url("../image/kroven_card_3.png");
+  animation: kroven3 24s ease-in-out infinite;
+}
+.card-kroven .card-bg-4 {
+  background-image: url("../image/kroven_card_4.png");
+  animation: kroven4 24s ease-in-out infinite;
+}
+.card-kroven .card-bg-5 {
+  background-image: url("../image/kroven_card_5.png");
+  animation: kroven5 24s ease-in-out infinite;
+}
+.card-kroven .card-bg-6 {
+  background-image: url("../image/kroven_card_6.png");
+  animation: kroven6 24s ease-in-out infinite;
+}
+.card-kroven .card-bg-7 {
+  background-image: url("../image/kroven_card_7.png");
+  animation: kroven7 24s ease-in-out infinite;
+}
+.card-kroven .pf-inner,
+.card-kroven .pf-view-btns {
+  z-index: 2;
+}
+.card-oneday .pf-shape {
   background: url("../image/oneday_main.png") center center / cover no-repeat;
 }
-.card-megawash {
+.card-megawash .pf-shape {
   background: url("../image/megawash_main.png") center center / cover no-repeat;
 }
-.card-alaska {
-  position: relative;
+.card-alaska .pf-shape {
   background: linear-gradient(155deg, #040a14, #081628);
 }
 .card-alaska .card-bg-1,
@@ -291,8 +338,7 @@
   z-index: 2;
 }
 
-.card-bagel {
-  position: relative;
+.card-bagel .pf-shape {
   background: linear-gradient(155deg, #d8c090, #e8d4a8);
 }
 .card-bagel .card-bg-1,
@@ -326,8 +372,7 @@
   z-index: 2;
 }
 
-.card-skin {
-  position: relative;
+.card-skin .pf-shape {
   background: url("../image/skin_card_1.png") center center / cover no-repeat;
 }
 .card-skin .card-bg-2 {
@@ -342,8 +387,7 @@
   z-index: 2;
 }
 
-.card-miseki {
-  position: relative;
+.card-miseki .pf-shape {
   background: none;
 }
 .card-miseki .card-bg-1,
@@ -372,8 +416,7 @@
   z-index: 2;
 }
 
-.card-notjust {
-  position: relative;
+.card-notjust .pf-shape {
   background: none;
 }
 .card-notjust .card-bg-1,
@@ -542,6 +585,88 @@
   }
   75%,
   94% {
+    opacity: 1;
+  }
+}
+@keyframes kroven1 {
+  0%,
+  10.29%,
+  100% {
+    opacity: 1;
+  }
+  14.29%,
+  96% {
+    opacity: 0;
+  }
+}
+@keyframes kroven2 {
+  0%,
+  10.29%,
+  28.57%,
+  100% {
+    opacity: 0;
+  }
+  14.29%,
+  24.57% {
+    opacity: 1;
+  }
+}
+@keyframes kroven3 {
+  0%,
+  24.57%,
+  42.86%,
+  100% {
+    opacity: 0;
+  }
+  28.57%,
+  38.86% {
+    opacity: 1;
+  }
+}
+@keyframes kroven4 {
+  0%,
+  38.86%,
+  57.14%,
+  100% {
+    opacity: 0;
+  }
+  42.86%,
+  53.14% {
+    opacity: 1;
+  }
+}
+@keyframes kroven5 {
+  0%,
+  53.14%,
+  71.43%,
+  100% {
+    opacity: 0;
+  }
+  57.14%,
+  67.43% {
+    opacity: 1;
+  }
+}
+@keyframes kroven6 {
+  0%,
+  67.43%,
+  85.71%,
+  100% {
+    opacity: 0;
+  }
+  71.43%,
+  81.71% {
+    opacity: 1;
+  }
+}
+@keyframes kroven7 {
+  0%,
+  81.71%,
+  100% {
+    opacity: 0;
+  }
+  85.71%,
+  96% {
     opacity: 1;
   }
 }
