@@ -252,10 +252,68 @@
   background: url("../image/megawash_main.png") center center / cover no-repeat;
 }
 .card-alaska {
+  position: relative;
   background: linear-gradient(155deg, #040a14, #081628);
 }
+.card-alaska .card-bg-1,
+.card-alaska .card-bg-2,
+.card-alaska .card-bg-3 {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center center;
+  opacity: 0;
+}
+.card-alaska .card-bg-1 {
+  background-image: url("../image/alaska_card_1.jpg");
+  animation: alaska1 12s ease-in-out infinite;
+}
+.card-alaska .card-bg-2 {
+  background-image: url("../image/alaska_card_2.jpg");
+  animation: alaska2 12s ease-in-out infinite;
+}
+.card-alaska .card-bg-3 {
+  background-image: url("../image/alaska_card_3.jpg");
+  animation: alaska3 12s ease-in-out infinite;
+}
+.card-alaska .pf-inner,
+.card-alaska .pf-view-btns {
+  z-index: 2;
+}
+
 .card-bagel {
+  position: relative;
   background: linear-gradient(155deg, #d8c090, #e8d4a8);
+}
+.card-bagel .card-bg-1,
+.card-bagel .card-bg-2,
+.card-bagel .card-bg-3,
+.card-bagel .card-bg-4 {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center center;
+  opacity: 0;
+}
+.card-bagel .card-bg-1 {
+  background-image: url("../image/poster_card_1.png");
+  animation: poster1 16s ease-in-out infinite;
+}
+.card-bagel .card-bg-2 {
+  background-image: url("../image/poster_card_2.png");
+  animation: poster2 16s ease-in-out infinite;
+}
+.card-bagel .card-bg-3 {
+  background-image: url("../image/poster_card_3.png");
+  animation: poster3 16s ease-in-out infinite;
+}
+.card-bagel .card-bg-4 {
+  background-image: url("../image/poster_card_4.jpg");
+  animation: poster4 16s ease-in-out infinite;
+}
+.card-bagel .pf-inner,
+.card-bagel .pf-view-btns {
+  z-index: 2;
 }
 
 .card-skin {
@@ -394,6 +452,86 @@
   }
   50%,
   92% {
+    opacity: 1;
+  }
+}
+@keyframes alaska1 {
+  0%,
+  30%,
+  100% {
+    opacity: 1;
+  }
+  38%,
+  92% {
+    opacity: 0;
+  }
+}
+@keyframes alaska2 {
+  0%,
+  30%,
+  71%,
+  100% {
+    opacity: 0;
+  }
+  38%,
+  63% {
+    opacity: 1;
+  }
+}
+@keyframes alaska3 {
+  0%,
+  63%,
+  100% {
+    opacity: 0;
+  }
+  71%,
+  92% {
+    opacity: 1;
+  }
+}
+@keyframes poster1 {
+  0%,
+  19%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  94% {
+    opacity: 0;
+  }
+}
+@keyframes poster2 {
+  0%,
+  19%,
+  50%,
+  100% {
+    opacity: 0;
+  }
+  25%,
+  44% {
+    opacity: 1;
+  }
+}
+@keyframes poster3 {
+  0%,
+  44%,
+  75%,
+  100% {
+    opacity: 0;
+  }
+  50%,
+  69% {
+    opacity: 1;
+  }
+}
+@keyframes poster4 {
+  0%,
+  69%,
+  100% {
+    opacity: 0;
+  }
+  75%,
+  94% {
     opacity: 1;
   }
 }
