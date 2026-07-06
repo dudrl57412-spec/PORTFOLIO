@@ -52,7 +52,7 @@
 }
 .card-title {
   font-family: "Oswald", sans-serif;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 600;
   color: var(--lime);
   letter-spacing: 0.14em;
@@ -81,7 +81,7 @@
 /* 본문 상세 설명 (미니타이틀과 독립적으로 조절 가능) */
 .card-entry-desc {
   font-size: 12px;
-  color: #777;
+  color:  #a0a0a0;
   line-height: 1.65;
   margin-top: 6px;
 }
@@ -109,7 +109,7 @@
   text-transform: uppercase;
 }
 .card-value {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 600;
   color: rgb(136, 136, 136);
   margin-bottom: 8px;

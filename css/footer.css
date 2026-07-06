@@ -71,7 +71,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
+  cursor: none;
   box-shadow: 0 4px 18px rgba(201, 255, 0, 0.35);
   opacity: 0;
   visibility: hidden;
@@ -173,7 +173,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
+  cursor: none;
   z-index: 5;
   transition: border-color 0.2s;
 }
@@ -284,7 +284,7 @@ footer {
   transition:
     opacity 0.35s ease,
     visibility 0.35s;
-  cursor: pointer;
+  cursor: none;
 }
 .pf-gallery-overlay.open {
   opacity: 1;
@@ -310,7 +310,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
+  cursor: none;
   z-index: 10;
   transition: border-color 0.2s;
 }
@@ -329,7 +329,7 @@ footer {
   flex-direction: column;
   align-items: center;
   gap: 40px;
-  cursor: pointer;
+  cursor: none;
   scrollbar-width: thin;
   scrollbar-color: rgba(201, 255, 0, 0.5) rgba(255, 255, 255, 0.05);
 }
@@ -350,7 +350,7 @@ footer {
 }
 .pf-gallery-item {
   width: 100%;
-  cursor: default;
+  cursor: none;
 }
 .pf-gallery-item img {
   width: 100%;
@@ -370,7 +370,7 @@ footer {
   border: 2px dashed #2a2a2a;
   border-radius: 6px;
   color: #555;
-  cursor: default;
+  cursor: none;
 }
 .pf-gallery-placeholder span {
   font-family: "Oswald", sans-serif;

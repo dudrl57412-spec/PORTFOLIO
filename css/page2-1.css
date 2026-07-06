@@ -43,7 +43,7 @@
   width: 100%;
   min-height: 460px;
   box-sizing: border-box;
-  cursor: default;
+  cursor: none;
 }
 
 /* 뒤에 살짝 기울어져 깔리는 스택 레이어 (영상 속 겹쳐진 화면들) */
@@ -112,13 +112,48 @@
   );
 }
 
+/* Video/Motion 카드 전용 — 뒤에 깔리는 PixVerse · Kling AI 로고 워터마크 */
+.ai-logo-bg {
+  position: absolute;
+  inset: 14% 10%;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  opacity: 0.22;
+  pointer-events: none;
+  transition:
+    opacity 0.5s ease,
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.ai-logo-bg-icon {
+  width: 100px;
+  height: 100px;
+  flex: none;
+}
+/* 카드별 포인트 컬러에 맞춰 로고 색상도 통일 */
+.accent-video .ai-logo-bg {
+  color: var(--lime);
+}
+.accent-dev .ai-logo-bg {
+  color: #5a96ff;
+}
+.accent-research .ai-logo-bg {
+  color: #ff8c3c;
+}
+.ai-card-flip:hover .ai-logo-bg {
+  opacity: 0.35;
+  transform: scale(1.08);
+}
+
 /* 정중앙에 뜨는 반투명 유리 패널 — 실제 텍스트 콘텐츠 */
 .ai-glass-panel {
   position: absolute;
   inset: 6% 4%;
   z-index: 2;
   border-radius: 16px;
-  background: #121212;
+  /* background: #121212; */
   backdrop-filter: blur(0px);
   -webkit-backdrop-filter: blur(0px);
   border: 1px solid #222;
