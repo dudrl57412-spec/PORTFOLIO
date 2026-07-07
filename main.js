@@ -712,6 +712,93 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  /*──────── HERO → CONTENT 원(circle) 스무스 전환 애니메이션 ────────*/
+  (function () {
+    const heroBadges = document.querySelectorAll(".hero-badge");
+    const heroStickyWrap = document.querySelector(".hero-sticky-wrap");
+    const contentWrap = document.querySelector(".content-wrap");
+    if (!heroBadges.length || !heroStickyWrap || !contentWrap) return;
+
+    const reduceMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    if (reduceMotion) return;
+
+    // 원(circle)마다 커지기 시작하는 타이밍을 살짝씩 어긋나게(stagger) 줘서
+    // "하나씩 순서대로 커지는" 느낌을 만든다.
+    const STAGGER = 0.16;
+    const badgeCount = heroBadges.length;
+    const badgeMaxScale = new Array(badgeCount).fill(6);
+
+    function easeOutCubic(t) {
+      return 1 - Math.pow(1 - t, 3);
+    }
+    function easeInQuad(t) {
+      return t * t;
+    }
+
+    // 화면 크기가 바뀌어도 원이 화면 대각선을 확실히 덮을 수 있도록
+    // 각 원의 지름 대비 필요한 배율을 계산해둔다.
+    function measure() {
+      const vw = window.innerWidth;
+      const vh = window.innerHeight;
+      const diagonal = Math.sqrt(vw * vw + vh * vh);
+      heroBadges.forEach((badge, i) => {
+        const size = badge.getBoundingClientRect().width || 1;
+        badgeMaxScale[i] = (diagonal / size) * 1.15;
+      });
+    }
+    measure();
+    window.addEventListener("resize", measure);
+    // 진입 애니메이션(badgePopIn)이 끝난 뒤 최종 크기 기준으로 다시 계산
+    setTimeout(measure, 2500);
+
+    let ticking = false;
+
+    function update() {
+      ticking = false;
+      const vh = window.innerHeight;
+      // 전환 구간: 스크롤이 0 → 1 화면 높이 만큼 내려가는 동안 진행된다.
+      const progress = Math.min(Math.max(window.scrollY / vh, 0), 1);
+
+      // 다음 페이지(content-wrap)가 위로 올라오면서 동시에
+      // 부드럽게 살아나도록 opacity + 살짝의 이동을 함께 준다.
+      const contentEase = easeOutCubic(progress);
+      contentWrap.style.opacity = String(contentEase);
+      contentWrap.style.transform = `translateY(${(1 - contentEase) * 32}px)`;
+
+      const span = 1 - (badgeCount - 1) * STAGGER;
+      heroBadges.forEach((badge, i) => {
+        const start = i * STAGGER;
+        let local = (progress - start) / span;
+        local = Math.min(Math.max(local, 0), 1);
+        const grow = easeInQuad(local);
+        const scale = 1 + grow * badgeMaxScale[i];
+        const fade = 1 - easeInQuad(Math.min(local * 1.25, 1));
+
+        // ⚠️ .hero-badge에는 badgePopIn 진입 애니메이션이 fill-mode: both로
+        // 걸려 있어서, 애니메이션이 끝난 뒤에도 transform/opacity를 계속
+        // 붙잡고 있다. CSS 우선순위상 애니메이션이 일반 인라인 스타일보다
+        // 위이기 때문에 setProperty(...,'important')로 강제 덮어써야 한다.
+        badge.style.setProperty("transform", `scale(${scale})`, "important");
+        badge.style.setProperty("opacity", String(fade), "important");
+        // 커지는 동안에는 next-page 위로 살짝 떠오르도록 z-index를 올려서
+        // "원이 커지며 다음 페이지로 넘어가는" 애니메이션이 실제로 보이게 한다.
+        badge.style.zIndex = local > 0 && local < 1 ? "20" : "";
+      });
+    }
+
+    function onScroll() {
+      if (!ticking) {
+        requestAnimationFrame(update);
+        ticking = true;
+      }
+    }
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    update();
+  })();
+
   /*──────── CUSTOM CIRCLE CURSOR ────────*/
   const pfCursor = document.getElementById("pf-cursor");
   if (pfCursor) {
