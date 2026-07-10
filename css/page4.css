@@ -11,6 +11,18 @@
 .card-changwon-dark .pf-shape {
   background: url("../image/changwon_main.png") center center / cover no-repeat;
 }
+.card-changwon-redesign .pf-shape {
+  background: url("../image/changwon_redesign_main.png") center center /
+    cover no-repeat;
+}
+.card-comingsoon .pf-shape {
+  background: linear-gradient(155deg, #101010, #1a1a1a);
+  border: 1px dashed rgba(255, 255, 255, 0.14);
+}
+.card-midnight .pf-shape {
+  background: url("../image/midnight_main.png") center center / cover
+    no-repeat;
+}
 
 /* CLONE CODING CARDS BACKGROUNDS */
 .card-dosirack .pf-shape {
@@ -31,6 +43,9 @@
 .card-puzzly:hover .pf-shape,
 .card-changwon:hover .pf-shape,
 .card-changwon-dark:hover .pf-shape,
+.card-changwon-redesign:hover .pf-shape,
+.card-comingsoon:hover .pf-shape,
+.card-midnight:hover .pf-shape,
 .card-dosirack:hover .pf-shape,
 .card-stx:hover .pf-shape,
 .card-paris:hover .pf-shape,

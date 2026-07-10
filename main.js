@@ -215,6 +215,40 @@ const PF_DATA = {
     result:
       "• 사용자 중심 인터페이스 검증\n• 컴포넌트 모듈화로 개발 리드 타임 단축\n• 신속한 피드백 반영 및 디버깅 최적화",
   },
+  "changwon-redesign": {
+    title: "CHANGWON REDESIGN<br/>City Promotion Website",
+    name: "창원특례시 홍보 사이트 리디자인",
+    created: "2026/07/01 → 2026/07/10",
+    type: [
+      ["FIGMA", "#6b4a8b"],
+      ["PHOTOSHOP", "#8b4444"],
+      ["Illustrator", "#b5651d"],
+      ["ChatGPT", "#10a37f"],
+      ["Visual Studio Code", "#007acc"],
+      ["Gemini", "#3d7a5c"],
+    ],
+    url: "비어 있음",
+    siteUrl: "https://changwon-redesign.vercel.app/",
+    overview:
+      "기존 창원특례시 웹사이트의 복잡하고 노후화된 레이아웃을 전면 개편한 리디자인 프로젝트. 관공서 특유의 딱딱한 이미지에서 벗어나, 창원의 역사와 매력을 한눈에 전달하는 스토리텔링형 반응형 웹사이트 제작을 목표로 함",
+    work: "• 메인 비주얼 개선: 꽉 막힌 메인 화면을 진해 야경 대형 히어로 이미지로 교체해 첫인상을 트렌디하게 바꿈\n• 구조 슬림화: 복잡했던 메뉴를 연대기, 3개 도시, 유명인, 축제, 맛집 5개로 압축하고 원페이지 스크롤로 설계함\n• 텍스트 시각화: 복잡한 줄글 정보들을 타임라인 형태와 바둑판식 카드 레이아웃으로 변경해 가독성을 높임\n• 코드 직접 구현: 디자인 시안을 바탕으로 직접 소스 코드를 수정하고 웹 퍼블리싱까지 완료함",
+    team: "본인 1명 (1인 총괄 프로젝트)",
+    result:
+      "• 관공서 이미지 탈피: 폰트, 여백, 감성적인 미디어를 활용해 현대적인 도시 브랜드 느낌을 냄\n• 정보 탐색 최적화: 불필요한 클릭 단계를 없애고 비주얼 중심으로 배치해 원하는 정보를 찾기 쉽게 만듦\n• 풀스택 역량 증명: UI/UX 기획부터 디자인, 퍼블리싱까지 전 과정을 혼자 이끌어내며 실무 능력을 입증함",
+  },
+  midnight: {
+    title: "MIDNIGHT<br/>Shop When The City Sleeps",
+    cardTitle: "MIDNIGHT",
+    name: "MIDNIGHT",
+    created: "",
+    type: [],
+    url: "비어 있음",
+    siteUrl: "https://midnight-nu-ten.vercel.app/",
+    overview: "",
+    work: "",
+    team: "",
+    result: "",
+  },
   "changwon-dark": {
     title: "CHANGWON FOODMAP<br/>Masan Restaurant Map",
     name: "Web Publishing",

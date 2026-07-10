@@ -1425,12 +1425,12 @@
         </div>
       </div>
       <div class="portfolio-section reveal">
-        <div class="portfolio-category">Web Publishing — 2 Projects</div>
-        <!-- 퍼블리싱 2개 1줄 (와이드) -->
+        <div class="portfolio-category">Web Publishing — 4 Projects</div>
+        <!-- 퍼블리싱 4개 2개씩 2줄 -->
         <div
           style="
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 14px;
             margin-top: 14px;
           "
@@ -1513,6 +1513,140 @@
                 <div class="pf-inner-text">
                   <div class="pf-title">INTRODUCE<br />CHANGWON</div>
                   <div class="pf-sub">Masan Restaurant Map</div>
+                </div>
+                <div class="pf-view-btns">
+                  <div
+                    class="pf-view-btn btn-info"
+                    onclick="
+                      event.stopPropagation();
+                      openInfoModal(
+                        this.closest('.portfolio-card').dataset.project,
+                      );
+                    "
+                  >
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      width="12"
+                      height="12"
+                    >
+                      <circle cx="12" cy="12" r="10" />
+                      <path d="M12 16v-4M12 8h.01" />
+                    </svg>
+                    내용보기
+                  </div>
+                  <div
+                    class="pf-view-btn btn-gallery"
+                    onclick="
+                      event.stopPropagation();
+                      openSiteUrl(
+                        this.closest('.portfolio-card').dataset.project,
+                      );
+                    "
+                  >
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      width="12"
+                      height="12"
+                    >
+                      <circle cx="12" cy="12" r="10" />
+                      <path
+                        d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+                      />
+                    </svg>
+                    사이트접속
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="portfolio-card card-changwon-redesign pf-card-reveal"
+            data-project="changwon-redesign"
+            style="aspect-ratio: 16/8"
+          >
+            <div class="pf-shape">
+              <div class="pf-inner">
+                <span class="pf-tag">Publishing</span>
+                <div class="pf-inner-text">
+                  <div class="pf-title">CHANGWON<br />REDESIGN</div>
+                  <div class="pf-sub">City Promotion Website</div>
+                </div>
+                <div class="pf-view-btns">
+                  <div
+                    class="pf-view-btn btn-info"
+                    onclick="
+                      event.stopPropagation();
+                      openInfoModal(
+                        this.closest('.portfolio-card').dataset.project,
+                      );
+                    "
+                  >
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      width="12"
+                      height="12"
+                    >
+                      <circle cx="12" cy="12" r="10" />
+                      <path d="M12 16v-4M12 8h.01" />
+                    </svg>
+                    내용보기
+                  </div>
+                  <div
+                    class="pf-view-btn btn-gallery"
+                    onclick="
+                      event.stopPropagation();
+                      openSiteUrl(
+                        this.closest('.portfolio-card').dataset.project,
+                      );
+                    "
+                  >
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      width="12"
+                      height="12"
+                    >
+                      <circle cx="12" cy="12" r="10" />
+                      <path
+                        d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+                      />
+                    </svg>
+                    사이트접속
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="portfolio-card card-midnight pf-card-reveal"
+            data-project="midnight"
+            style="aspect-ratio: 16/8"
+          >
+            <div class="pf-shape">
+              <div class="pf-inner">
+                <span class="pf-tag">Publishing</span>
+                <div class="pf-inner-text">
+                  <div class="pf-title">MIDNIGHT</div>
+                  <div class="pf-sub">Shop When The City Sleeps</div>
                 </div>
                 <div class="pf-view-btns">
                   <div
